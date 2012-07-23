@@ -1,1 +1,1 @@
-<% response.sendRedirect("province/examitem.action"); %>
+<% response.sendRedirect("index.action"); %>
