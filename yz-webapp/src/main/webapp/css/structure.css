@@ -1,0 +1,1176 @@
+/*------------------------------------------------------------------
+[Structure Stylesheet]
+
+Project:	DRCL CSS template : Structure.css
+Version:	1.0
+Created by:	 Mad.JonIrenicus(CSS)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body 
+	2. Header / #header
+		2.1. Navigation / #navbar
+	3. Content / #content
+		3.1. Left column / #leftcolumn
+		3.2. Right column / #rightcolumn
+		3.3. Sidebar / #sidebar
+			3.3.1. RSS / #rss
+			3.3.2. Search / #search
+			3.3.3. Boxes / .box
+			3.3.4. Sideblog / #sideblog
+			3.3.5. Advertisements / .ads
+	4. Footer / #footer
+-------------------------------------------------------------------*/
+@charset "utf-8";
+a {color:#1FAFF5;text-decoration:none; cursor:pointer}
+a:hover{ text-decoration:underline;}
+h2 { font-size:20px; font-weight:bold; font-family:微软雅黑; }
+.h2info { color: #999}
+.dotline { height:1px; border-top:1px dotted #ccc; margin:10px 0;}
+.solidline { height:1px; border-top:1px solid #ccc; margin:10px 0;}
+.left_menu{
+	width:12%; 
+	margin-right:0px; 
+	min-height:617px; 
+	display:block;
+	float:left;
+	background-color:#E3EFFB;
+	}
+
+.right_content{
+	float:left; 
+	width:88%;
+	}
+/*头部 css*/
+.head_bk01{background-color:#1FAFF5; height:1px;overflow:hidden;margin-top:10px; }
+.head_bk02{background-color:#eee; height:30px; line-height:30px;overflow:hidden;padding:0 10px; }
+
+.pagehead01 {background-color:#1faff5; height:5px; margin-top:10px;overflow:hidden;margin-bottom:10px; }
+.pagehead02 {background-color:#eee; height:30px;margin-bottom:10px;}
+
+.top_serach_box {border:1px solid #ccc;padding:10px; margin:10px 0;overflow:hidden;}
+.top_serach_box:hover {border:1px solid #1FAFF5;}
+.top_serach_box td { padding:5px 5px 5px 0;}
+.top_serach_box label { width:100px; display:inline-block}
+
+.top_info_column {border:1px solid #ccc;padding:10px; margin-bottom:10px; overflow: hidden;zoom:1;}
+.top_info_column:hover {border:1px solid #1FAFF5;}
+.info2_box {float:left;width:460px; overflow: hidden;}
+.info2_box dt {float:left;padding:5px;width:100px;background-color:#CFDFFF;border:1px solid #79CAFF;border-right:none;}
+.info2_box dd{float:left;padding:5px;width:320px; border:1px solid #79CAFF;}
+
+.info4_box {float:left;width:230px; overflow: hidden; margin-top:10px;}
+.info4_box dt {float:left;padding:5px;width:50px;background-color:#CFDFFF;border:1px solid #79CAFF;border-right:none;}
+.info4_box dd{float:left;padding:5px;width:140px; border:1px solid #79CAFF;}
+
+.right3pxborder {padding-left:5px;border-left:3px solid #1FAFF5;}
+
+.folder_tree_topbox { background-color:#1FAFF5; width:190px; height:50px; min-height:50px; margin-bottom:10px;}
+/* 后台- 目录树 CSS */
+.folder_tree {
+	min-height:500px;
+	height: auto!important; 
+	height:500px;
+	overflow: hidden;
+	zoom: 1;
+	padding: 20px 0 10px 5px;
+	background:#EEEEEE;
+	border:1px solid #ccc;
+}
+.folder_tree:hover { border-color:#1FAFF5}
+.folder_tree li {
+	padding:7px;
+	margin: 2px;
+	background: url(../image/icon02.gif) repeat-x left bottom;
+}
+.folder_tree li ul {
+	margin-left: 10px;
+}
+.folder_tree li ul li { border-bottom: 1px dotted #ccc;}
+.folder_tree li a {
+	padding: 5px 5px 5px 0 ;
+	text-decoration: none;
+	font-size: 12px;
+	color:#222;
+}
+.folder_tree li ul li a {color:#626262; padding: 5px ;}
+
+.folder_tree li a:hover {
+	background-color: #4dabf5;
+	color: #fff;
+}
+.folder_tree_active {
+	background-color: #0274d5;
+	color: #fff!important;
+}
+.folder_tree li.submenu {
+	background: url("../image/controlsub.png") no-repeat scroll left 4px transparent;
+}
+.folder_tree li.submenu_open {
+	background: url("../image/controlsubopen.png") no-repeat scroll left 4px transparent;
+}
+
+
+.icon_news {
+    background: url("../image/opml-balloon.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    padding-right: 2px;
+	margin-bottom: -3px;
+    width: 20px;
+}
+.icon_fold {
+    background: url("../image/folder-tree.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    padding-right: 2px;
+	margin-bottom: -3px;
+    width: 16px;
+}
+.icon_point {
+    background: url("../image/sum.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    padding-right: 2px;
+	margin-bottom: -3px;
+    width: 16px;
+}
+.icon_history {
+    background: url("../image/script.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    padding-right: 2px;
+	margin-bottom: -3px;
+    width: 16px;
+}
+.icon_task {
+    background: url("../image/blue-document-task.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    padding-right: 2px;
+	margin-bottom: -3px;
+    width: 20px;
+}
+.icon_sort {
+    background: url("../image/sort-date.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    padding-right: 2px;
+	margin-bottom: -3px;
+    width: 20px;
+}
+.icon_triumph {
+    background: url("../image/quill.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    padding-right: 2px;
+	margin-bottom: -3px;
+    width: 20px;
+}
+
+.icon_support {
+    background: url("../image/hammer-screwdriver.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    padding-right: 2px;
+	margin-bottom: -3px;
+    width: 20px;
+}
+
+.icon_progess {
+    background: url("../image/paper-plane.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    padding-right: 2px;
+	margin-bottom: -3px;
+    width: 20px;
+}
+/* 后台- 目录树 CSS end */
+
+.jpopup_layer { 
+	border:4px solid #ccc; 
+	width:760px;
+	overflow:hidden;
+	zoom:1;
+	padding:10px;
+	border-radius: 6px 6px 6px 6px;
+	}
+
+
+
+
+/* 小柳 CSS Document ----------------------------------------------------------------------------------------------- */
+
+.btn_confirm{
+	background:url('../image/css3buttons_backgrounds.png');
+	border-color:#911D1B; 
+    background-position: 0 -121px!important;
+	background-repeat:no-repeat;
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 12px; 
+	color:#fff;
+	text-decoration: none; 
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+	display: inline-block; 
+	padding: 6px 5px;
+	white-space: nowrap; 
+	overflow: visible; 
+	cursor: pointer;
+	border-style:solid;
+	border-width:1px;
+	-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; 
+	outline: none;
+	position: relative; zoom: 1; 
+	line-height: 1.11; *display: inline; *vertical-align: middle;
+	}
+button.btn_confirm:hover  { background-position: 0 -161px!important; }
+button.btn_confirm:active { top: 1px ; }/*  按钮按下后的效果 */
+/*  红色系列按钮 end */
+
+/*  灰色系列按钮 start */
+.btn_cancell{ 
+	background:  url('../image/css3buttons_backgrounds.png') 0 0 no-repeat; 
+	background-repeat:no-repeat;
+	background-position: 0 -200px;
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 12px; 
+	color:#3C3C3D;
+	text-decoration: none; 
+	display: inline-block; 
+	padding: 6px 5px;
+	white-space: nowrap; 
+	overflow: visible; 
+	cursor: pointer;
+	border: 1px solid #CACACA; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; 
+	outline: none;
+	position: relative; zoom: 1; 
+	line-height: 1.11; *display: inline; *vertical-align: middle;
+	}
+button.btn_cancell:hover{  background-position: 0 -240px; }
+button.btn_cancell:active { top: 1px ; }/*  按钮按下后的效果 */
+/*  灰色系列按钮 end */
+
+/*省级管理员*/
+.strong{
+	color:#f60;
+	font-weight:bold;
+	}
+.exam_number{
+	border:1px solid #e7c69d;
+	background:#ffecce;
+	padding:5px;
+	overflow:hidden;
+	}
+.form li {
+	padding:5px 0;
+	}
+.form li label { 
+	width:100px; 
+	display:inline-block;
+	}
+.ml_100{
+	margin-left:100px;
+	}
+.examination_info{
+	border-left:8px solid #1FAFF5;
+	padding-left:5px;
+	font-weight:bold;
+	font-size:14px;
+	margin-bottom:5px;
+	}
+.tablebox {
+	margin:10px 0;
+	width:100%;
+	}
+.tablebox tr th{
+	background:#eee;
+	border: 1px solid #DBDADA;
+	padding: 5px;
+	text-align:center;
+	}
+.tablebox tr td {
+    border: 1px solid #DBDADA;
+    padding: 5px;
+	text-align:center;
+}
+.examination_skin{
+	border:1px solid #ccc;
+	padding:10px;
+	}
+.button_box{
+	margin:20px 0;
+	text-align:center;
+	}
+.button_box button{
+	margin:0 10px;
+	}
+	
+.exam_success_box{
+	width:20%;
+	margin:20px auto;
+	text-align:center;
+	}
+	
+/*缓考/禁考管理*/	
+.slowtest_info{
+	overflow:hidden;
+	margin-bottom:10px;
+	width:375px;
+	float:left;
+	}
+.slowtest_info dt{
+	background:#eee;
+	border:1px solid #ccc;
+	border-right:none;
+	width:90px;
+	float:left;
+	height:28px;
+	line-height:28px;
+	padding:0 5px;
+	}
+.slowtest_info dd{
+	float:left;
+	border:1px solid #ccc;
+	height:28px;
+	line-height:28px;
+	padding:0 5px;
+	width:255px;
+	}
+.slowtest_info_02{
+	overflow:hidden;
+	margin-bottom:10px;
+	width:250px;
+	float:left;
+	}
+.slowtest_info_02 dt{
+	background:#eee;
+	border:1px solid #ccc;
+	border-right:none;
+	width:90px;
+	float:left;
+	height:28px;
+	line-height:28px;
+	padding:0 5px;
+	}
+.slowtest_info_02 dd{
+	float:left;
+	border:1px solid #ccc;
+	height:28px;
+	line-height:28px;
+	padding:0 5px;
+	width:130px;
+	}
+.slowtest_info_03{
+	overflow:hidden;
+	margin-bottom:10px;
+	width:375px;
+	float:left;
+	}
+.slowtest_info_03 dt{
+	background:#eee;
+	border:1px solid #ccc;
+	border-right:none;
+	width:100px;
+	float:left;
+	height:28px;
+	line-height:28px;
+	padding:0 5px;
+	}
+.slowtest_info_03 dd{
+	float:left;
+	border:1px solid #ccc;
+	height:28px;
+	line-height:28px;
+	padding:0 5px;
+	width:245px;
+	}
+.slowtest_info_04{
+	overflow:hidden;
+	margin-bottom:10px;
+	width:750px;
+	float:left;
+	}
+.slowtest_info_04 dt{
+	background:#eee;
+	border:1px solid #ccc;
+	border-right:none;
+	width:100px;
+	float:left;
+	height:28px;
+	line-height:28px;
+	padding:0 5px;
+	}
+.slowtest_info_04 dd{
+	float:left;
+	border:1px solid #ccc;
+	height:28px;
+	line-height:28px;
+	padding:0 5px;
+	width:620px;
+	}
+.middleline{
+	border-bottom:2px solid #ccc;
+	margin-bottom:10px;
+	}
+.pagernumber_left{
+	margin: 15px auto;
+	float:left;
+	}
+
+/*用于考生报名信息详细*/
+.right_c{
+	width:700px;
+	float:left;
+	}
+.right_l,.right_r{
+	float:left;
+	margin:0 10px auto ;
+	display:inline;
+	padding:30px 10px;
+	min-height:60px;
+	}
+.review_info{
+	padding:5px 0;
+	clear:both;
+	overflow:hidden;
+	}
+.review_info01{
+	border:1px solid #ccc;
+	background:#eee;
+	padding:10px;
+	float:left;
+	margin-right:10px;
+	width:150px;
+	text-align:center;
+	}
+.review_info02,.review_info03{
+	border:1px solid #ccc;
+	float:left;
+	width:260px;
+	text-align:center;
+	margin-right:10px;
+	height:34px;
+	line-height:34px;
+	padding:0 10px;
+	}
+.review_info03{
+	width:200px;
+	float:right;
+	margin-right:0;
+	}
+.form_02 li {
+	padding:5px 0;
+	}
+.form_02 li label { 
+	width:100px; 
+	display:inline-block;
+	background:#eee;
+	padding:5px;
+	margin-right:10px;
+	}
+
+
+/* 浮动层 */
+.layer_box {
+	border: 4px solid #ddd;
+	background: none repeat scroll 0 0 #fff;
+	width: 600px;
+	padding: 20px;
+	-moz-border-radius: 6px 6px 6px 6px;
+	opacity: none;
+}
+
+/*用于中间内容框架*/
+.content_box{
+	width:700px;
+	margin:0 auto;
+	}
+
+/* 添加有效报名记录 */
+.course_box {
+    margin-bottom: 10px;
+}
+.course_box ul{
+	text-indent:20px;}
+.course_box li{
+	line-height:180%;
+	}
+.course_boxtitle{
+	border:1px solid #ccc;
+	background:#eee;
+	height:25px;
+	line-height:25px;
+	padding:0 10px;
+	margin-bottom:10px;
+	}
+.box_examinfo{
+	border:1px solid #ccc;
+	background:#ffcecf;
+	padding:5px;
+	text-align:center;
+	margin-bottom:10px;
+	font-weight:bold;
+	}
+.box_examinfo_green{
+	border:1px solid #ccc;
+	background:#def3de;
+	padding:5px;
+	text-align:center;
+	margin-bottom:10px;
+	font-weight:bold;
+	}
+.box_summary{
+	border:1px solid #ccc;
+	padding:20px;
+	text-align:center;
+	min-height:300px;
+	}
+.box_summary p{
+	line-height:180%;
+	font-size:18px;
+	font-weight:bold;
+	}
+	
+/*预报名时间*/
+.time {
+    display: inline-block;
+    line-height: 20px;
+    width: 100px;
+	}
+
+
+.time_box{
+	border:1px solid #ccc;
+	padding:10px;
+	}
+
+.bottombg{
+	background:#eee;
+	padding:5px;
+	margin:10px 0;
+	}
+.mlr20{
+	margin:0 20px;
+	}
+
+/*新增css*/
+.exam_info_box{
+	border:1px solid #ccc;
+	background:#fff;
+	padding:40px;
+	text-align:center;
+	margin-bottom:10px;
+	min-height:300px;
+	}
+.box_successinfo{
+	margin-bottom: 10px;
+	font-weight:bold;
+	color:#00cc00;
+	}
+.checkbox_box{
+	margin:10px 0;
+	overflow:hidden;
+	}
+.checkbox_box li{
+	float:left;
+	margin-right:20px;
+	}
+	
+/* 邓 CSS Document ----------------------------------------------------------------------------------------------- */
+
+/*---------------------------------------------------------------------------------
+考区管理员视图css
+----------------------------------------------------------------------------------*/
+
+/*---编辑新增考点表单样式---*/
+.district_edit_form {
+	width: 600px; 
+	margin: 0 auto;
+}
+
+.district_edit_table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.district_edit_table td {
+	padding: 10px 0;
+	text-align: left;
+}
+
+.district_edit_select {
+	width: 330px;
+}
+
+.district_edit_select_02 {
+	width: 170px;
+}
+
+.dis_edit_input_01 {
+	width: 320px;
+}
+
+.district_edit_btn {
+	width: 500px;
+	margin: 0 auto;
+	overflow: hidden;
+	zoom: 1;
+	text-align: center;
+}
+
+.district_edit_btn li {
+	display: inline;
+}
+
+/*---h2包含内容span样式---*/
+.registration_h2_span {
+	font-size: 14px;
+	font-weight: normal;
+	float: right; 
+	padding-top: 10px;
+	*padding-top: 0;
+}
+
+.registration_h2_span_first {
+	border-right: 1px solid #ccc;
+	margin-right: 10px;
+	padding-right: 10px;
+}
+
+/*---提示错误icon样式---*/
+.icon_cross_number {
+	margin: 10px 0;
+	clear: both;
+	float: right;
+	font-weight: bold;
+	color: #FF2020;
+}
+
+/*---搜索框样式样式---*/
+.top_serach_box_registration {
+	overflow: hidden;
+	zoom: 1;
+	border: 1px solid #ccc;
+	margin: 10px 0;
+	padding: 10px;
+}
+
+.top_serach_box_registration:hover {
+	border: 1px solid #1FAFF5;
+}
+
+.top_serach_box_registration ul {
+	overflow: hidden;
+	zoom: 1;
+	margin-bottom: 10px;
+}
+
+.top_serach_box_registration label {
+	width: auto!important;
+	margin-right: 5px;
+}
+
+.top_serach_box_registration li {
+	float: left;
+	margin-right: 10px;
+}
+
+.top_serach_select_01 {
+	width: 120px;
+}
+
+/*---灰色边框不是搜索框的样式---*/
+.grey_boder_box {
+	margin: 10px 0;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+/*---考试详细信息样式---*/
+.seat_detail_box {
+	border: 1px solid #ccc;
+	overflow: hidden;
+	zoom: 1;
+	margin-bottom:10px;
+}
+
+.seat_detail_top {
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #ffffcc;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+	zoom: 1;
+}
+.seat_detail_bottom {
+	padding: 10px;
+	background-color: #ffffcc;
+	border-top: 1px solid #ccc;
+	overflow: hidden;
+	zoom: 1;
+}
+.seat_detail_top li {
+	float: left;
+	margin-right: 10px;
+}
+
+.seat_detail_title {
+	width: 200px;
+	margin: 0 auto 30px;
+	height: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #ccc;
+	background-color: #eee;
+}
+
+.seat_detail_list {
+	margin: 0 0 10px 0px;
+	overflow: hidden;
+	zoom: 1;
+	width:880px; /*  by jon   秦刚要求 改为自动适应可设置宽度  单元格宽度为110px    880px 就是一行8个  2012.6.18 */
+}
+
+.seat_detail_list_s_01 li {
+	margin: 10px 20px!important;
+}
+
+.seat_detail_list .seat_border {
+	width:94px;
+	height: 115px;
+	display: block;
+	border: 3px solid #00cc00;
+	text-align: center;
+	line-height: 27px;
+}
+.seat_detail_list li {
+	float: left;
+	margin:5px ; /*  by jon   秦刚要求 改为自动适应可设置宽度  宽度设置为 倍数 2012.6.18 */
+}
+.seat_detail_list li button {
+	margin:5px 20px;
+	}
+.seat_detail_number {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/*  by deng  当座位只有select时让高度自适应 */
+.seat_detail_list_s li {
+	float: left;
+	margin: 10px 30px ;
+}
+.seat_detail_list_s .seat_border {
+	padding: 10px 0;
+	height: auto;
+}
+
+
+.seat_detail_green {
+	background-color: #33ff99;
+}
+
+.seat_detail_yellow {
+	border: 3px solid #ccc!important;
+	background-color: #ffffcc;
+}
+
+.seat_detail_none {
+	border: 3px dotted #ccc!important;
+	background-color: #eee;
+}
+
+/*tablebox双行颜色*/
+.tablebox .double_color {
+	background-color: #ffffcc;
+}
+
+/*icon锁的样式*/
+.icon_lock {
+	padding-left: 16px;
+	background: url(../image/lock.gif) no-repeat left center;
+}
+
+/*座位详细表样式*/
+.time_unit_select {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.time_unit_select li {
+	width: 170px;
+	margin: 0 5px 5px 0;
+	border: 1px solid #333;
+	background-color: #ccc;
+	color: #fff;
+	float: left;
+	font-weight: bold;
+}
+
+.time_unit_select li.time_unit_on,
+.time_unit_select li.time_unit_lock {
+	background-color: #33cc33;
+}
+
+.time_unit_select li a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+
+.time_unit_select li.time_unit_lock {
+	background: #33cc33 url(../image/lock.gif) no-repeat right top;
+}
+
+.examination_none {
+	margin: 120px 0;
+	text-align: center;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.examination_none a:hover {
+	text-decoration: underline;
+}
+
+
+/*弹出框样式*/
+.invalid_popup_box {
+	clear: both;
+	border: 2px solid #ccc;
+	padding: 20px 30px;
+	width: 420px;
+	margin: 0 auto;
+}
+
+.invalid_tip_text {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	line-height: 25px;
+	border-bottom: 1px dotted #ccc;
+}
+
+.invalid_reason_content {
+	margin-bottom: 10px;
+	width: 380px;
+	height: 80px;
+}
+
+.top_serach_form {
+	width: 400px;
+	padding: 20px;
+	overflow: hidden;
+	zoom: 1;
+	border: 1px solid #ccc;
+}
+
+.top_serach_form li {
+	margin-bottom: 10px;
+}
+
+.top_serach_form li label {
+	width: 80px;
+	float: left;
+	display: block; 
+}
+
+.top_serach_form li input {
+	width: 300px;
+}
+
+.top_serach_form li select {
+	width: 308px;
+}
+/* 2011.12.20 新增考务系统 css  jonirenicus*/
+
+/*试题管理left*/
+.left_main{
+	border:1px solid #ccc;
+	backgrond:#fff;
+	float: left;
+    margin-right: 10px;
+    min-height: 394px;
+	height: auto!important; 
+	height:394px;
+    width: 186px;  /* 原宽度190px  ie6下位移改为186px jonirenicus*/
+	padding:5px;
+	margin-bottom:10px;
+	}
+.sidebar_tab {
+    border-bottom: 2px solid #0274D5;
+    height: 28px;
+    overflow: hidden;
+    padding-left: 10px;
+}
+.sidebar_tab li{
+	float:left;
+	background:#eee;
+	border:1px solid #ccc;
+	border-bottom:none;
+	padding:5px 8px;
+	text-align: center;
+	cursor: pointer;
+	margin-right:5px;
+	display:inline;
+	font-family:微软雅黑;
+	}
+.selected{
+	border:1px solid #ccc;
+	background:#4dabf5!important;
+	color:#fff;
+	}
+.form_list li{
+	padding:1px 0;
+	}
+.form_list  input, select { padding:1px!important;}	
+.form_listline{
+	border-bottom:1px dotted #ccc;
+	margin:5px 0;
+	}
+
+/*目录树*/	
+.tree{ display:block;width:170px; _width:168px; overflow:hidden;margin-top:10px;margin-left:10px;float:left; }
+.tree li{ line-height:200%;} 
+.tree ul{ padding-left:17px; line-height:180%;}
+.tree .folder{ background:url(../image/folder_classic.gif) no-repeat left center; padding-left:21px; cursor:pointer;font-size:14px; }
+.tree .build{ background-image:url(../image/building_medium.gif); }
+.tree .file{ background:url(../image/bulb.gif) no-repeat left center; padding-left:13px;}
+.tree .sel{color:#fff; background-color:orange;}
+.plus{ background:url(../image/expand.gif) no-repeat 0 2px; padding-left:17px; }
+.cut{ background:url(../image/contract.gif) no-repeat 0 2px; padding-left:17px; }
+.tree a{text-decoration:none;color:#333;}	
+
+/*右边内容*/
+.right_box{
+	float:left;
+	width:746px;
+	margin-bottom:10px;
+	}
+
+.text_list {
+	margin-left: 25px;
+}
+
+.text_list li {
+	line-height: 2.5;
+}
+
+.bg_grey {
+	background-color: #eee;
+}
+
+.exam_list_min {
+	clear: both;
+	margin-bottom: 20px;
+	min-height: 30px;
+	height: auto!important;
+	height: 30px;
+	padding: 10px!important;
+}
+
+.exam_list_float {
+	overflow: hidden;
+	zoom: 1;
+	margin-bottom: 10px;
+}
+
+.exam_list_float li {
+	float: left;
+	margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+/*------ liu 外考务新版 css ------*/
+
+/*信息未发布提示框*/
+.box_notinfo{border:1px solid #ccc;padding:20px;font-family:微软雅黑;font-size:20px;text-align:center;min-height:350px;padding-top:100px;}
+	
+/*考场签到表详细*/
+.info3_box {float:left;width:290px; overflow: hidden;}
+.info3_box dt {float:left;padding:5px;width:50px;background-color:#CFDFFF;border:1px solid #79CAFF;border-right:none;}
+.info3_box dd{float:left;padding:5px;width:200px; border:1px solid #79CAFF;}
+
+.info5_box {float:left;width:160px; overflow: hidden;}
+.info5_box dt {float:left;padding:5px;width:50px;background-color:#CFDFFF;border:1px solid #79CAFF;border-right:none;}
+.info5_box dd{float:left;padding:5px;width:70px; border:1px solid #79CAFF;}
+
+.examroom_box{ border:1px solid #ccc;padding:10px; margin:10px 0;overflow:hidden;}
+.examroom_list{ border:1px solid #ccc;padding:7px;width:210px;overflow:hidden;margin:0 10px 10px 0;float:left;}
+.examroom_list img{float:left; width:86px; height:90px; margin-right:10px;}
+.examroom_list .name{font-size:20px; font-family:微软雅黑;}
+.examroom_list textarea{width:100px;height:50px;overflow:auto; color:#999;}
+.examroom_list ul{ clear:both; overflow:hidden; padding-top:5px;}
+.examroom_list ul li{ line-height:160%;}
+.exam_detail_end{ font-size:16px; text-align:center; font-weight:bold; padding:10px 0;}
+
+/*准考证打印详细*/
+h3.info{font-size:18px; font-family:微软雅黑; text-align:center; margin-bottom:20px;}
+.card_form{border:1px solid #ccc; padding:10px;}
+.card_info{ width:500px; margin:0 auto; overflow:hidden; margin-bottom:10px;}
+.card_info ul li{ line-height:180%;}
+h4.info{font-size:16px; font-family:微软雅黑; text-align:center; margin:10px 0;}
+.testnotice li{ line-height:180%;}
+
+/*成绩详细 添加一行两个 css*/
+.form_list_detail li{ margin-right:10px; float:left; width:320px;}
+
+
+/*2012.03.13 成绩管理样式*/
+.score_left {
+	width: 180px;
+	float: left;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+
+.score_box_list {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+
+.score_select {
+	margin: 10px 0;
+}
+
+.score_select li {
+	margin-bottom: 10px;
+}
+
+.score_select li label {
+	width: 35px;
+	display: block;
+	float: left;
+}
+
+.score_select li select {
+	width: 120px;
+}
+
+.score_select_l label {
+	width: 80px!important;
+}
+
+.score_right {
+	width: 726px;
+	float: right;
+	border: 2px solid #ccc;
+	padding: 10px;
+	min-height: 480px;
+	height: auto!important;
+	height: 480px;
+}
+
+.form_score li {
+	width: 50%;
+	float: left;
+}
+
+.table_total_bg td {
+	background-color: #cfdfff;
+	border-bottom: none!important;
+}
+
+.table_speail_bg {
+	background-color: #ffffcc
+}
+
+
+/*2012.03.14 考场座位一排6个overflow适应修改*/
+.seat_overfolw {
+	margin: 0 auto 10px;
+	overflow: auto;
+	padding-bottom: 10px;
+}
+
+.seat_overfolw_sub {
+	width: 640px;
+	overflow: hidden;
+	zoom: 1;
+	margin:0 auto;
+}
+.seat_overfolw_sub li {
+	float: left;
+	display: inline;
+	margin: 5px;
+}
+.seat_overfolw_sub .seat_border {
+	width:64px;
+	display: block;
+	padding: 5px 0;
+	border: 3px solid #00cc00;
+	text-align: center;
+	line-height: 27px;
+}
+.seat_overfolw_sub .seat_detail_none {
+	border: 3px dotted #ccc!important;
+	background-color: #eee;
+}
+.seat_border  select {width:56px;}
+
+
+/*2012.3.20 新增加 内考务和外考务 证书管理 css*/
+.certi_manage{margin-bottom:20px;}
+.certi_manage ul{margin-left:20px;}
+.certi_manage ul li{line-height:30px;}
+.certi_manage ul li label{margin-right:10px;width:100px;display:inline-block;}
+.certi_info{float: left; margin-top: 10px;overflow: hidden; width: 260px;}
+.certi_info dt {float:left;padding:5px;width:80px;background-color:#CFDFFF;border:1px solid #79CAFF;border-right:none;}
+.certi_info dd{float:left;padding:5px;width:140px; border:1px solid #79CAFF;}
+
+/*2012.3.21 新增加 预览页面内容css by 沈路*/
+.info_right_box { float:right; border:1px solid #ccc; width:300px;padding:10px;}
+.info_right_box li {line-height:16px; margin:7px 0; list-style:disc;margin-left:15px; border-bottom:1px dotted #ccc;padding-bottom:6px;}
+.info_right_box h3 { border-bottom:1px solid #ccc;padding-bottom:5px; color:#000}
+.info_left_box { float:left; width:580px; }
+.info_left_box li {line-height:19px; margin:7px 0; border-bottom:1px dotted #ccc;padding-bottom:6px;}
+.info_left_box button { vertical-align:middle}
+.info_left_box p { margin:8px 0;line-height:18px;}
+.info_left_box h3 { text-align:center; margin:10px 0;}
+.info_news li {line-height:19px; margin:7px 0; border-bottom:1px dotted #ccc;padding-bottom:6px;}
+.news_detail_new p  { 
+	margin:8px 0;
+	line-height:18px;    
+}
+.news_detail_new {
+	background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px 3px 3px 3px;
+    padding: 5px 10px;
+	}
+	
+	
+	
+/*2012.4.24 照片弹出层*/
+.popup_box{
+	border:1px solid #ccc;
+	padding:10px;
+	background:#f2f2f2;
+	width:100px;
+}
+/* 2011.09.08 added by jonirenicus 头部新的导航css */
+.nav{ overflow:hidden; width:940px; height:110px; background:url(../image/nav_bk.jpg) no-repeat;padding-right:20px; border-top:5px solid #1faff5; margin-top:10px;}
+.nav span{ margin-top:72px;background-color:#b0dcfd; padding:8px 15px; font-size:14px; font-family:微软雅黑; margin-left:10px; float:right;color:#017cc8; }
+.nav span a {color:#336699; }
+.nav span a:hover {color:#3585C6; }
+.nav h4 { display:inline; font-size:14px; float:left; margin-top:10px;margin-left:10px; font-weight:normal;font-family:微软雅黑;width:360px; overflow:hidden; height:20px;}
+.nav_focus {color:#FFF!important ; background-color:#3585c6!important;}
+.nav_focus a {color:#FFF!important ;}
+.sub_nav{ background-color:#3585c6; height:20px; padding:10px;-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.sub_nav a { color:#fff; font-weight:bold; margin:0 10px; font-size:14px; font-family:微软雅黑; padding:3px 6px;}
+.sub_nav a:hover, .sub_nav_focus {color:#336699!important ; background-color:#fff!important;-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; text-decoration:none}
+.nav select{ width:140px; overflow:hidden} 
+.nav_toptitle {font-family: 微软雅黑;font-size: 20px;font-weight: bold;}
+.nav_logininfo {color: #999999; float:right; margin-top:12px;}

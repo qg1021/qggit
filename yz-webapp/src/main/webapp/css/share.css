@@ -1,0 +1,473 @@
+/*------------------------------------------------------------------
+[share Stylesheet]
+
+Project:	DRCL CSS template : share.css
+Version:	1.0
+Created by:	 Mad.JonIrenicus(CSS)
+-------------------------------------------------------------------*/
+
+@charset "utf-8";
+
+em {font-family:Arial,Helvetica,sans-serif;color:#999;font-size:11px;}
+
+
+
+
+/* 虚线实线 通用 */
+.box_solid_top {
+    padding: 5px 0;
+	border-top:1px solid #ccc;
+}
+.box_solid_bottom {
+    padding: 5px 0;
+	border-bottom:1px solid #ccc;
+}
+.box_dotline_top {
+    padding: 5px 0;
+	border-top:1px dotted #ccc;
+}
+.box_dotline_bottom {
+    padding: 5px 0;
+	border-bottom:1px dotted #ccc;
+}
+
+/* 提示框 通用 宽度另设 */
+.box_solid_grey {
+    border: 1px solid #dddddd;
+    padding: 5px 10px;
+	background-color:#f5f5f5;	
+	overflow:hidden;
+}
+.box_solid_blue {
+    border: 1px solid #bedae5;
+    padding: 5px 10px;
+	background-color:#ecf9ff;	
+	overflow:hidden;
+}
+.box_solid_orange {
+
+    border: 1px solid #e7c69d;
+    padding: 5px 10px;
+	background-color:#ffecce;	
+	overflow:hidden;
+}
+.box_solid_green {
+    border: 1px solid #bee082;
+    padding: 5px 10px;
+	background-color:#edfbd8;	
+	overflow:hidden;
+}
+.box_solid_red {
+	border: 1px solid #df8f90;
+    padding: 5px 10px;
+	background-color:#ffcecf;	
+	overflow:hidden;
+}
+.box_dotted_blue{
+    background-color: #EEFFFF;
+    border: 1px dotted #66CCCC;
+    padding: 5px 10px;
+	overflow:hidden;
+}
+/*  小提示框 不能放置图标*/
+.box_hint_grey{
+    border: 1px solid #dddddd;
+    padding:2px 4px;
+	background-color:#f5f5f5;	
+	}
+
+.box_hint_orange{
+    border: 1px solid #e7c69d;
+    padding:2px 4px;
+	background-color:#ffecce;	
+	}
+
+.box_hint_red {
+    border: 1px solid #df8f90;
+    padding:2px 4px;
+	background-color:#ffcecf;	
+}
+
+.box_hint_blue {
+	border: 1px solid #bedae5;
+    padding:2px 4px;
+	background-color:#ecf9ff;	
+}
+
+
+/*  各种图标 配合上面的各种box 使用*/
+/* 出错提示 */
+.icon_cross{
+	background-image: url("../image/cross.gif");
+    background-repeat: no-repeat;
+	padding-left:20px;
+}
+/* 成功提示 */
+.icon_success {
+	background-image: url("../image/tick.gif");
+    background-repeat: no-repeat;
+	padding-left:20px;
+}
+/* 叹号提示 */
+.icon_exclamation{
+    background-image: url("../image/exclamation.gif");
+    background-repeat: no-repeat;
+	padding-left:20px;
+}
+
+.icon_balloon {
+	background-image: url("../image/balloon.gif");
+    background-repeat: no-repeat;
+	padding-left:20px;
+}
+/* 灯泡提示 */
+.icon_light_bulb{
+    background-image: url("../image/lightbulb.gif");
+	padding-left:20px;
+    background-repeat: no-repeat;
+	display:inline-block;
+}
+/*news 提醒，新动态*/
+.new_icon {
+	background: url(../image/icon.gif) no-repeat 0 -220px;
+	height: 20px;
+	padding-left:20px;
+}
+/*hot 提醒，hot*/
+.hot_icon {
+	background: url(../image/icon.gif) no-repeat 0 -240px;
+	height: 20px;
+	padding-left:30px;
+}
+/* 面包屑箭头（灰色）*/
+.breadcrumb_mo {
+	background: url(../image/icon.gif) no-repeat scroll 0 -100px;
+	height: 20px;
+	width: 20px;
+	margin-left:5px;
+	float: left;
+	text-indent: -999999px;
+	overflow:hidden;
+}
+/* 面包屑icon */
+.title_icon {
+	background: url(../image/icon.gif) no-repeat 0 -200px;
+	height: 20px;
+	padding-left:20px;
+}
+/* 列表前图标 */
+.list_b {
+	background: url(../image/icon.gif) no-repeat scroll 0 -160px;
+	height: 20px;
+	overflow: hidden;
+	padding-left: 15px;
+}
+/* mo 带箭头文字 链接 */
+.mo_icon {
+	background: url(../image/icon.gif) no-repeat scroll 0 -120px;
+	color: #fe8c1a;
+	padding-left:15px;
+	display:inline-block;
+	height:20px;
+}
+/* horn = 小喇叭，用于说明文字前*/
+.horn_icon {
+	background: url(../image/icon.gif) no-repeat scroll 0 -300px;
+	height: 20px;
+	padding-left:20px;
+	vertical-align: middle;
+}
+/*向右下角指示方向绿色箭头图标*/
+.fontinfo {
+	vertical-align: middle;
+	background: url(../image/icon.gif) no-repeat scroll 0 -140px;
+	height: 20px;
+	padding: 0 0 0 15px;
+}
+.ico_arrowrd {
+	vertical-align: middle;
+	background: url(../image/icon.gif) no-repeat scroll 0 -144px;
+	height:12px;
+	width:12px;
+	display:inline-block;
+}
+
+/*  间隔线 （灰色）*/
+.sheer {
+	background: url(../image/icon.gif) no-repeat scroll 0 -320px;
+	padding-left: 15px;
+	overflow:hidden;
+	height:20px;
+}
+/*课程显示隐藏上下图标   */
+.godown {
+	background: url(../image/icon.gif) no-repeat 0 -260px;
+	height:20px;
+	padding-left: 12px;
+}
+
+.goup {
+	background: url(../image/icon.gif) no-repeat 0 -280px;
+	height:20px;
+	padding-left: 12px;
+}
+/*课程目录图标   */
+.course_catalog{
+	background: url(../image/icon.gif) no-repeat 0 -340px;
+	height:20px;
+	padding-left: 20px;
+	}
+
+
+
+
+
+/* 上页下页翻页 紧凑版  start */
+.pagernumber {
+	margin: 15px auto;
+	text-align: center;
+	color: #666;
+	clear: both;
+	font: 12px;
+	clear: both;
+	height: 25px;
+	line-height: 25px;
+}
+.pagernumber a {
+	color: #666;
+    -moz-border-radius: 2px 2px 2px 2px;
+	text-decoration: none;
+    font-family: arial;
+    font-size: 12px;
+    height: 15px;
+    line-height: 15px;
+    overflow: hidden;
+    padding: 2px 6px;
+}
+
+.pagernumber a:hover {
+	color: #fff;
+	text-decoration: none;
+	background:#83b3f2;
+}
+
+.pagenum_cur{
+	color:#fff!important;
+	background:#33559b;
+	}
+/* 上页下页翻页 紧凑版 end */
+/*-- 上页下页翻页 样式 02 带go 按钮 和 共计多少条 --*/
+.pagernumber02 {
+	margin: 15px auto;
+	text-align: center;
+	color: #666;
+	clear: both;
+	clear: both;
+	height: 20px;
+	line-height: 20px;
+	float:right;
+	font-size: 12px;
+}
+.pagernumber02 a {
+	color: #666;
+    border: 1px solid #CCCCCC;
+	text-decoration: none;
+    font-family: arial;
+	float:left;
+    line-height: 20px;
+    margin-left: 2px;
+    overflow: hidden;
+    padding:1px 6px;
+}
+
+.pagernumber02 a:hover {
+	color: #fff;
+	text-decoration: none;
+	background:#1FAFF5;
+
+}
+
+.pagenum02_cur{
+	color:#fff!important;
+	background:#1FAFF5;
+	border-color:#83b3f2;
+	}
+/*---------------------------------------------------------------------------------
+[ 可扩展按钮系列  Stylesheet]
+
+Project:	DRCL CSS template : share.css
+Version:	1.0
+Created by:	 Mad.JonIrenicus(CSS)
+----------------------------------------------------------------------------------*/
+
+/*  蓝色系列按钮 start */
+.btn_blue{ 
+	background: #ECECEC url('../image/css3buttons_backgrounds.png') 0 0 no-repeat; 
+	background-position: 0 -40px;
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 12px; 
+	color:#fff;
+	text-decoration: none; 
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+	display: inline-block; 
+	padding: 6px 5px;
+	white-space: nowrap; 
+	overflow: visible; 
+	cursor: pointer;
+	border: 1px solid #388AD4; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; 
+	outline: none;
+	zoom: 1; 
+	line-height: 1.11; *display: inline; *vertical-align: middle;
+	}
+a.btn_blue:hover, button.btn_blue:hover, input.btn_blue:focus  { background-position: 0 -81px; border-color: #347BBA; color: #FFFFFF;}
+a.btn_blue:active, input.btn_blue:active, button.btn_blue:active { top: 1px; }/*  按钮按下后的效果 */
+/*  蓝色系列按钮 end */
+
+/*  红色系列按钮 start */
+.btn_red{ 
+	background: #ECECEC url('../image/css3buttons_backgrounds.png') 0 0 no-repeat; 
+	background-position: 0 -121px;
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 12px; 
+	color:#fff;
+	text-decoration: none; 
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+	display: inline-block; 
+	padding: 6px 5px;
+	white-space: nowrap; 
+	overflow: visible; 
+	cursor: pointer;
+	border: 1px solid #911D1B; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; 
+	outline: none;
+	position: relative; zoom: 1; 
+	line-height: 1.11; *display: inline; *vertical-align: middle;
+	}
+a.btn_red:hover, button.btn_red:hover, input.btn_red:focus  { color: #FFFFFF; background-position: 0 -161px;border-color: #911D1B; }
+a.btn_red:active, input.btn_red:active, button.btn_red:active { top: 1px ;border-color: #911D1B; }/*  按钮按下后的效果 */
+/*  红色系列按钮 end */
+
+/*  绿色系列按钮 start */
+.btn_green{ 
+	background: #ECECEC url('../image/css3buttons_backgrounds.png') 0 0 no-repeat; 
+	background-position: 0 -280px;
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 12px; 
+	color:#fff;
+	text-decoration: none; 
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+	display: inline-block; 
+	padding: 6px 5px;
+	white-space: nowrap; 
+	overflow: visible; 
+	cursor: pointer;
+	border: 1px solid #45BF55; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; 
+	outline: none;
+	position: relative; zoom: 1; 
+	line-height: 1.11; *display: inline; *vertical-align: middle;
+	}
+a.btn_green:hover, button.btn_green:hover, input.btn_green:focus  { color: #FFFFFF; background-position: 0 -320px;border-color: #45BF55; }
+a.btn_green:active, input.btn_green:active, button.btn_green:active { top: 1px ;border-color: #45BF55; }/*  按钮按下后的效果 */
+/*  绿色系列按钮 end */
+
+
+/*  灰色系列按钮 start */
+.btn_grey{ 
+	background: #ECECEC url('../image/css3buttons_backgrounds.png') 0 0 no-repeat; 
+	background-position: 0 -200px;
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 12px; 
+	color:#3C3C3D;
+	text-decoration: none; 
+	display: inline-block; 
+	padding: 6px 5px;
+	white-space: nowrap; 
+	overflow: visible; 
+	cursor: pointer;
+	border: 1px solid #CACACA; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; 
+	outline: none;
+	position: relative; zoom: 1; 
+	line-height: 1.11; *display: inline; *vertical-align: middle;
+	}
+a.btn_grey:hover, button.btn_grey:hover, input.btn_grey:focus  {  background-position: 0 -240px;border-color: #CACACA; }
+a.btn_grey:active, input.btn_grey:active, button.btn_grey:active { top: 1px ;border-color: #CACACA; }/*  按钮按下后的效果 */
+/*  灰色系列按钮 end */
+
+/*  白色系列按钮 start */
+.btn_white{ 
+	background: #ECECEC url('../image/css3buttons_backgrounds.png') 0 0 no-repeat; 
+	background-position: 0 0px;
+
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 12px; 
+	color:#3C3C3D;
+	text-decoration: none; 
+
+
+	display: inline-block; 
+	padding: 6px 5px;
+
+	white-space: nowrap; 
+	overflow: visible; 
+	cursor: pointer;
+	border: 1px solid #CACACA; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; 
+	outline: none;
+	position: relative; zoom: 1; 
+	line-height: 1.11; *display: inline; *vertical-align: middle;
+	}
+a.btn_white:hover, button.btn_white:hover, input.btn_white:focus  { background:#e4e4e4;border-color: #CACACA; }
+a.btn_white:active, input.btn_white:active, button.btn_white:active { top: 1px ;border-color: #CACACA; }/*  按钮按下后的效果 */
+/*  白色系列按钮 end */
+
+.pill{ -webkit-border-radius: 19px; -moz-border-radius: 19px; border-radius: 19px; padding: 5px 10px; *padding: 4px 10px; }
+
+.btn_left{-webkit-border-bottom-right-radius: 0px; -webkit-border-top-right-radius: 0px; -moz-border-radius-bottomright: 0px; -moz-border-radius-topright: 0px; border-bottom-right-radius: 0px; border-top-right-radius: 0px; margin-right: 0px; }
+.btn_middle{ margin-right: 0px; margin-left: 0px; -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px; border-right: none; border-left: none;}
+.btn_right {-webkit-border-bottom-left-radius: 0px; -webkit-border-top-left-radius: 0px; -moz-border-radius-bottomleft: 0px; -moz-border-radius-topleft: 0px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; margin-left: 0px; }
+.btn_serial {margin-right: 0px; margin-left: 0px; -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;  border-left: none;}
+.btn_big { font-size: 16px; padding:4px 17px;  *padding: 4px 17px 2px 17px;}/*  大按钮效果 */
+
+/* ---------------------tab 切换表格---------------------- */
+.tab_container {
+    overflow: hidden;
+	width:100%;
+	display:inline-block;
+}
+
+/*tab 切换*/
+.switch_tab {
+	background:#f8f8f8;
+    border-bottom:2px solid #1FAFF5;
+	overflow:hidden;
+	 height:28px;
+	padding-left:10px;
+	}
+
+.switch_tab li {
+    background: #ebebeb;
+	border:1px solid #ccc;
+	border-bottom:none;
+    float: left;
+    padding: 4px 10px 6px 10px;
+    text-align: center;
+	font-size:13px;
+	cursor: pointer;
+	margin: 0 6px -3px 0;
+	display:inline;
+	font-family:微软雅黑;
+	}
+	
+.switch_tab li:hover{
+    border-color: #1FAFF5;
+	color:#1FAFF5;
+	}
+
+.switch_tab_current {
+	color:#fff!important;
+	background: none repeat scroll 0 0 #1FAFF5!important;
+	background: -moz-linear-gradient(top, #1FAFF5, #0e92d2)!important;
+}
+
+	
+
+ /* ---------------------tab 切换表格  end---------------------- */
+ 

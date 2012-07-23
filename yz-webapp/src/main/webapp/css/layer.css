@@ -1,0 +1,40 @@
+.submitplan {
+	position: absolute;
+	visibility: hidden;
+	overflow: hidden;
+	border: 1px solid #CCC;
+	background-color: #F9F9F9;
+	background-image: url('../image/loading.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid #333;
+	padding: 5px;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.65;
+	opacity: 0.65;
+	top: 0px;
+	left: 0px;
+	width: 110%;
+	height: 110%;
+}
+#fullbg {
+	background-color: #666;
+	display: none;
+	z-index: 1000;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	filter: Alpha(Opacity = 30);
+	/* IE */
+	-moz-opacity: 0.6;
+	/* Moz + FF */
+	opacity: 0.6;
+}
+
+#dialog {
+	position: absolute;
+	background: #fff;
+	display: none;
+	z-index: 1000;
+}
+
