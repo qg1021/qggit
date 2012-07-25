@@ -39,7 +39,7 @@ import com.drcl.yz.cache.CacheKeyUtil;
 import com.drcl.yz.entity.BaseData;
 
 /**
- * Description of the class
+ * 基础数据业务逻辑类
  * 
  * @author qingang
  * @version 1.0
@@ -98,7 +98,7 @@ public class BaseDataManager extends CacheEntityManager<BaseData, Long>
 
     /**
      * 
-     * 根据type查询基础数据列表
+     * 通过type查询基础数据列表
      * 
      * @since 2012-7-26
      * @author qingang
@@ -108,6 +108,7 @@ public class BaseDataManager extends CacheEntityManager<BaseData, Long>
     @SuppressWarnings("unchecked")
     public List<BaseData> searchByType(int type)
     {
+
         String cacheKey = CacheKeyUtil.buildBaseDataKey(type);
         Object object = cacheManager.get(cacheKey);
         if (object == null)
