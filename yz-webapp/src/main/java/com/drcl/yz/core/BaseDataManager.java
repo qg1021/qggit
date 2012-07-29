@@ -30,6 +30,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import cn.common.lib.cache.CacheManager;
 import cn.common.lib.springside.orm.BaseDao;
@@ -45,7 +47,8 @@ import com.drcl.yz.entity.BaseData;
  * @version 1.0
  * @since 2012-7-25
  */
-
+@Component
+@Transactional
 public class BaseDataManager extends CacheEntityManager<BaseData, Long>
 {
     @Autowired

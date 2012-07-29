@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -38,6 +39,16 @@ public class Business extends BaseEntity
     private Boolean           ispublish;            // 是否发布
 
     private Date              publishdate;          // 发布时间
+
+    @Transient
+    public String getStatusName()
+    {
+        if (ispublish)
+        {
+            return "已发布";
+        }
+        return "未发布";
+    }
 
     public String getTitle()
     {

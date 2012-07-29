@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.lang.time.DateFormatUtils;
 
@@ -256,23 +255,6 @@ public class FileUploadUtils
         {
             return false;
         }
-    }
-
-    public static List<Map<String, String>> getDataFromFile(
-            String uploadFileName, List<String> keyList, File upload)
-    {
-        String filetype = uploadFileName.substring(
-                uploadFileName.lastIndexOf(".") + 1).toLowerCase();
-
-        if (filetype.equalsIgnoreCase("xlsx"))
-        {
-            return ExcelUtils.excel2List(keyList, upload, false);
-        }
-        if (filetype.equalsIgnoreCase("xls"))
-        {
-            return ExcelUtils.excel2List(keyList, upload, true);
-        }
-        return null;
     }
 
     public static String[] getContentType(String filename, String postfox)

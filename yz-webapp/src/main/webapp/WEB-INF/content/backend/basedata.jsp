@@ -1,0 +1,106 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="/common/taglibs.jsp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="outsidearea" name="activemenu" />
+	<title>基础数据</title>
+	<link href="${ctx}/css/master.css" type="text/css" rel="stylesheet"/> 
+	<script src="${ctx}/js/jquery.js" type="text/javascript"></script>
+	<script src="${ctx}/js/jcommon.js" type="text/javascript"></script>
+	<script  type="text/javascript">
+	$(document).ready(function() {
+		$("#checkall").click(function(){
+ 			$("input[name='ids']").attr("checked",$(this).attr("checked"));
+ 		});
+	});
+	function onBatchDelete(){
+		var  isChecked=false;
+		$("input[name='ids']:checked").each(function(){
+			isChecked = true;
+		});
+		if(!isChecked){
+			alert("选择删除的记录");
+			return false;
+		}
+
+		if(confirm("确认删除？")){
+			$("#mainForm").attr("action","basedata!batchDelete.action").submit();
+		}
+	}
+	</script>
+</head>
+<body>
+<div id="wrapper">
+	<%@ include file="/common/top.jsp"%>
+	<!--the end of head-->
+	<div id="content">  
+		<!-- 左侧内容 column  start -->
+		<%@ include file="/common/menu.jsp"%>
+		<!-- 左侧内容 column  end -->
+		<!-- 右侧内容 column  start -->  
+		<div class="right_content">
+			<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+				<tr  height="28">
+					<td  background="${ctx}/image/admin/title_bg1.jpg">当前位置&gt;&gt;基础数据</td>
+				</tr>
+				<tr>
+					<td bgcolor="#b1ceef" height="1"></td>
+				</tr>
+				<tr height="20">
+					<td background="${ctx}/image/admin/shadow_bg.jpg"></td>
+				</tr>
+			</table>
+			<div class="pagehead01"></div>
+				<div id="message" style="line-height: 35px;">
+					<s:actionmessage theme="custom" cssClass="tipbox"/>
+				</div>
+    			<form id="mainForm" action="basedata.action" method="post">
+    				<ul class="top_serach_box">
+		    		<li class="rr"><button type="submit">搜索</button></li>
+			        <li class="ll mr20">数据名称
+			        	<input type="text" id="code" name="filter_LIKES_name" size="15" value="${param['filter_LIKES_name']}"/>
+			        </li>
+			        <li class="ll mr20">数据类型
+			        	<s:select list="dataTypeList" listKey="value" listValue="label" id="type" name="filter_EQI_type"  value="#parameters.filter_EQI_type"  theme="simple" cssStyle="width:270px;" headerKey="" headerValue="--选择--"/>
+			        </li>
+    			</ul>
+    			<p class="ll mt15">
+    				<button id="btnCreate" type="button" onclick="window.location.href='basedata!input.action'">新增</button>
+    				<button id="btnDelete" type="button" onclick="onBatchDelete();">删除</button>
+    			</p>
+	    			<table class="tablebox">
+					    <tr>
+					    	<th width="5%"><input type="checkbox" id="checkall" name="checkall"/></th>
+					        <th width="40%">数据名称</th>
+					        <th width="25%">数据类型</th>
+					        <th width="30%">操作</th>
+					    </tr>
+	    				<s:iterator value="page.result" status="st">
+						   <tr>
+						   		<td title="${name}"><input type="checkbox" id="ids" name="ids" value="${id}"/></td>
+						        <td title="${name}"><common:cut string="${name}" len="30"/></td>
+						        <td>${typename}</td>
+						        <td>
+						        	<a href="basedata!input.action?id=${id}">修改</a>&nbsp;&nbsp;
+						        	<a href="javaScript:delRecord('basedata!delete.action?id=${id}');">删除</a>
+						        </td>
+						    </tr>
+					    </s:iterator>
+					    <s:if test="page.result.size ==0">
+							<tr> 
+								<td height="30" align="center" colspan="4"><font color="gray">没有符合条件的记录</font></td>
+							</tr>  
+						</s:if>      
+	    			</table>
+	    			<!-- 翻页 start  -->
+	    			<%@ include file="/common/page.jsp"%>
+					<!-- 翻页 end  -->
+				</form>
+			</div>
+			<!-- 右侧内容 column  end-->    
+		</div> <!-- content  end-->  
+	</div><!-- wrapper  end-->  
+</body>
+</html>

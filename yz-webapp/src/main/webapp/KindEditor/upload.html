@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>HTML编辑器</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="/kindeditor4/themes/default/default.css" />
+		<link rel="stylesheet" href="/kindeditor4/plugins/code/prettify.css" />
+		<script type="text/javascript" src="/kindeditor4/kindeditor-min.js"></script>
+		<script type="text/javascript" src="/kindeditor4/lang/zh_CN.js"></script>
+		<script>
+		var htmlEditor = null;
+		KindEditor.ready(function(K) {
+			htmlEditor = K.create('textarea[name=editContent]', {
+				cssPath : '/kindeditor4/plugins/code/prettify.css',
+				uploadJson : '/kindeditor4/jsp/upload_json.jsp',
+				fileManagerJson : '/kindeditor4/jsp/file_manager_json.jsp',
+				allowFileManager : true,	//允许查看文件
+				fullscreenMode :true,		//默认全屏
+				items : ['source','image','insertfile'],
+				afterChange : function() {
+					var text = this.html();
+					var result = "";
+					if(text.length > 0){
+						//字符<a开头为连接
+						if(text.indexOf("</a>") != -1){
+							result = this.text();
+						}
+						//字符<img开头为图片
+						if(text.indexOf("<img") != -1){
+							var start = text.indexOf("src=") + 5;
+							var end = text.indexOf("\"",start);
+							result = text.substring(start,end);
+						}
+						//拿到数据，直接返回
+						window.returnValue = result;
+						window.close();//直接关闭此窗口
+					}
+				}
+			});
+			htmlEditor.clickToolbar("image");
+		});
+	</script>
+	<style>
+	body{
+		font-size: 12px;
+	}
+	</style>
+	</head>
+
+	<body>
+		<textarea id="editContent" name="editContent" cols="100" rows="8" style="width: 700px; height: 200px;"></textarea>
+	</body>
+</html>

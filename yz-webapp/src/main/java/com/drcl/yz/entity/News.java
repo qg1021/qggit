@@ -4,20 +4,21 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
  * 
- * 当地特产、户外旅游、名胜古迹
+ * 新闻焦点、热点资讯
  * 
  * @author qingang
  * @version 1.0
  * @since 2012-7-24
  */
 @Entity
-@Table(name = "t_local_feeling")
+@Table(name = "t_news")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class News extends BaseEntity
 {
@@ -41,7 +42,21 @@ public class News extends BaseEntity
 
     private String            link;                 // 链接
 
-    private int               type;                 // 0：求购 1：供应
+    private int               type;                 // 0：新闻焦点 1：热点资讯
+
+    public final static int   TYPE_0           = 0;
+
+    public final static int   TYPE_1           = 1;
+
+    @Transient
+    public String getStatusName()
+    {
+        if (ispublish)
+        {
+            return "已发布";
+        }
+        return "未发布";
+    }
 
     public String getSource()
     {

@@ -26,12 +26,10 @@
 //-------------------------------------------------------------------------
 package com.drcl.yz.web;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Date;
 import java.util.List;
 
-import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.time.DateFormatUtils;
@@ -98,7 +96,7 @@ public class UploadAction extends ActionSupport
         // 设置文件路径，优先存储在本地，如本地存储失败，则存储至服务器路径上
         String localFilePath = PropertyUtils.getProperty("upload.path",
                 realPath)
-                + Global.STYLE_PATH + "/" + date;
+                + "upload" + "/" + date;
 
         try
         {
@@ -128,150 +126,6 @@ public class UploadAction extends ActionSupport
             message = Global.UPLOAD_LOSE;
         }
 
-        return SUCCESS;
-    }
-
-    public String pic() throws Exception
-    {
-        String date = DateFormatUtils.format(new Date(), "yyyyMM");
-        String realPath = RequestUtils.getRealPath(ServletActionContext
-                .getServletContext(), "/");
-
-        // 设置文件路径，优先存储在本地，如本地存储失败，则存储至服务器路径上
-        String localFilePath = PropertyUtils.getProperty("upload.path",
-                realPath)
-                + Global.STUDENTPIC_PATH + "/" + date;
-
-        try
-        {
-            if (file != null)
-            {
-                fileName = "";
-                List<String> fileTypes = Lists.newArrayList();
-                fileTypes.add("jpg");
-                message = FileUploadUtils.fileTypeValidate(fileFileName, file,
-                        fileTypes, Global.STUDENTPIC_MAXSIZE);
-
-                if (message == null)
-                {
-                    fileName = FileUtils.saveFile(localFilePath, file,
-                            fileFileName, Global.STUDENTPIC_PREFIX);
-                    fileName = "/" + date + "/" + fileName;
-                    message = Global.UPLOAD_SUCCESS;
-
-                }
-            }
-
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            message = Global.UPLOAD_LOSE;
-        }
-
-        return SUCCESS;
-    }
-
-    /**
-     * 
-     * 上传身份证扫描件
-     * 
-     * @since 2012-5-28
-     * @author qingang
-     * @return
-     * @throws Exception
-     */
-    public String idcard() throws Exception
-    {
-        String date = DateFormatUtils.format(new Date(), "yyyyMM");
-        String realPath = RequestUtils.getRealPath(ServletActionContext
-                .getServletContext(), "/");
-
-        // 设置文件路径，优先存储在本地，如本地存储失败，则存储至服务器路径上
-        String localFilePath = PropertyUtils.getProperty("upload.path",
-                realPath)
-                + Global.IDCARD_PATH + "/" + date;
-
-        try
-        {
-            if (idimage != null)
-            {
-                fileName = "";
-                List<String> fileTypes = Lists.newArrayList();
-                fileTypes.add("jpg");
-                fileTypes.add("gif");
-                fileTypes.add("png");
-                message = FileUploadUtils.fileTypeValidate(idimageFileName,
-                        idimage, fileTypes, Global.IDCARD_MAXSIZE);
-
-                if (message == null)
-                {
-                    fileName = FileUtils.saveFile(localFilePath, idimage,
-                            idimageFileName, Global.STUDENTPIC_PREFIX);
-                    fileName = "/" + date + "/" + fileName;
-                    message = Global.UPLOAD_SUCCESS;
-
-                }
-            }
-
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            message = Global.UPLOAD_LOSE;
-        }
-
-        return SUCCESS;
-    }
-
-    // 上传考生照片
-    public String uploadStudentPic() throws Exception
-    {
-        // 允许上传的照片格式
-        List<String> fileType = Lists.newArrayList();
-        fileType.add(Global.STUDENTPIC_EXT);
-
-        // 验证照片的格式和大小
-        message = FileUploadUtils.fileTypeValidate(fileFileName, file,
-                fileType, Global.STUDENTPIC_MAXSIZE);
-
-        // 判断照片的像素,读取源图像
-        BufferedImage bi = ImageIO.read(file);
-        int srcWidth = bi.getWidth(); // 源图宽度
-        int srcHeight = bi.getHeight(); // 源图高度
-        // if (srcWidth < Global.STUDENTPIC_MINELEMENT
-        // || srcWidth > Global.STUDENTPIC_MAXELEMENT
-        // || srcHeight < Global.STUDENTPIC_MINELEMENT
-        // || srcHeight > Global.STUDENTPIC_MAXELEMENT)
-        // {
-        // message = "文件尺寸不符合要求,上传失败";
-        // }
-
-        if (message == null)
-        {
-            String date = DateFormatUtils.format(new Date(), "yyyyMM");
-            String realPath = RequestUtils.getRealPath(ServletActionContext
-                    .getServletContext(), "/");
-
-            // 设置文件路径，优先存储在本地，如本地存储失败，则存储至服务器路径上
-            String localFilePath = PropertyUtils.getProperty("upload.path",
-                    realPath)
-                    + Global.STUDENTPIC_PATH + "/" + date;
-
-            try
-            { // 　存储文件，获得存储后的文件名
-                fileName = FileUtils.saveFile(localFilePath, file,
-                        fileFileName, Global.STUDENTPIC_PREFIX);
-                fileName = "/" + date + "/" + fileName;// 附件后加上日期方便保存到数据库中
-                this.width = srcWidth;
-                this.height = srcHeight;
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-                message = "对不起,文件上传失败了!";
-            }
-        }
         return SUCCESS;
     }
 
@@ -305,40 +159,6 @@ public class UploadAction extends ActionSupport
                 message = "对不起,附件上传失败了!";
             }
         }
-        return SUCCESS;
-    }
-
-    // 上传证书模板图片
-    public String uploadCertTemImage() throws Exception
-    {
-        // 验证附件的格式和大小
-        message = FileUploadUtils.fileTypeValidate(fileFileName, file,
-                Global.CERTTEMIMAGEFILETYPES, Global.ATTACH_MAXSIZE);
-
-        if (message == null)
-        {
-            String date = DateFormatUtils.format(new Date(), "yyyyMM");
-            String realPath = RequestUtils.getRealPath(ServletActionContext
-                    .getServletContext(), "/");
-
-            // 设置文件路径，优先存储在本地，如本地存储失败，则存储至服务器路径上
-            String localFilePath = PropertyUtils.getProperty("upload.path",
-                    realPath)
-                    + Global.CETTEMPLATE_PATH + File.separator + date;
-
-            try
-            { // 　存储文件，获得存储后的文件名
-                fileName = FileUtils.saveFile(localFilePath, file,
-                        fileFileName, Global.CERTTEMPLATE_PREFIX);
-                fileName = File.separator + date + File.separator + fileName;// 附件后加上日期方便保存到数据库中
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-                message = "对不起,图片上传失败了!";
-            }
-        }
-
         return SUCCESS;
     }
 

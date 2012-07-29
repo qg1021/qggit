@@ -2,9 +2,12 @@ package com.drcl.yz.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import com.drcl.yz.contant.Global;
 
 /**
  * 
@@ -34,6 +37,12 @@ public class BaseData extends BaseEntity
     public String getName()
     {
         return name;
+    }
+
+    @Transient
+    public String getTypename()
+    {
+        return Global.BASEDATA_TYPES.get(type).getLabel();
     }
 
     public void setName(String name)

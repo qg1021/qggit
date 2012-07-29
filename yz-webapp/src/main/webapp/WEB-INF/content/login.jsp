@@ -99,13 +99,13 @@ document.onkeydown = function(e){
 										<td>用户名</td>
 										<td>
 										<input style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid"
-											maxLength="30" size="24" id="j_username"  name="j_username"><span id="error_j_username"></span></td>
+											maxLength="30" size="23" id="j_username"  name="j_username"><span id="error_j_username"></span></td>
 									</tr>
 									<tr height="36">
-										<td>&nbsp;</td>
-										<td>口 令</td>
-										<td><INPUT
-											style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid"
+										<td></td>
+										<td>口&nbsp;&nbsp;令</td>
+										<td>
+										<input style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid"
 											type="password" maxLength="30" size="24" id="j_password" name="j_password"><span id="error_j_password"></span>
 										</td>
 									</tr>

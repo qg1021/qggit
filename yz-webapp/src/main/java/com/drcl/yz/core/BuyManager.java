@@ -30,6 +30,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springside.modules.orm.Page;
 import org.springside.modules.orm.PropertyFilter;
 
@@ -48,7 +50,8 @@ import com.google.common.collect.Lists;
  * @version 1.0
  * @since 2012-7-25
  */
-
+@Component
+@Transactional
 public class BuyManager extends CacheEntityManager<Buy, Long>
 {
     @Autowired

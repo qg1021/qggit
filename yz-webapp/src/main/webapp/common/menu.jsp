@@ -38,20 +38,20 @@
 			<table cellspacing="0" cellpadding="0" width="150" border="0">
 				<tr height="22">
 					<td background="${ctx}/image/admin/menu_bt.jpg"  align="center">
-						<a class="menuParent" onclick="expand(1)" href="javascript:void(0);">关于我们</a></td>
+						<a class="menuParent" onclick="expand(1)" href="javascript:void(0);">功能模块</a></td>
 				</tr>
 				<tr height="4">
 					<td></td>
 				</tr>
 			</table>
-			<table id="child1" style="display:none" cellspacing="0" cellpadding="0" width="150" border="0">
+			<table id="child1"  cellspacing="0" cellpadding="0" width="150" border="0">
 				<tr height="20">
 					<td  width="10">
 						&nbsp;
 					</td>
 					<td>
 						<img height="9" src="${ctx}/image/admin/menu_icon.gif" width="9">
-						<a class="menuChild" href="#" target="main">公司简介</a>
+						<a class="menuChild" href="basedata.action">基础数据</a>
 					</td>
 				</tr>
 				<tr height="20">
@@ -60,7 +60,16 @@
 					</td>
 					<td>
 						<img height="9" src="${ctx}/image/admin/menu_icon.gif" width="9"/>
-						<a class="menuChild" href="#" target="main">公司简介</a>
+						<a class="menuChild" href="news.action?mtype=0">新闻焦点</a>
+					</td>
+				</tr>
+				<tr height="20">
+					<td  width="10">
+						&nbsp;
+					</td>
+					<td>
+						<img height="9" src="${ctx}/image/admin/menu_icon.gif" width="9"/>
+						<a class="menuChild" href="news.action?mtype=1">热点资讯</a>
 					</td>
 				</tr>
 

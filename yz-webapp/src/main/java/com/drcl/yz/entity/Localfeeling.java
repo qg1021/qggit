@@ -4,20 +4,21 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
  * 
- * 新闻焦点、热点资讯
+ * 当地特产、户外旅游、名胜古迹
  * 
  * @author qingang
  * @version 1.0
  * @since 2012-7-24
  */
 @Entity
-@Table(name = "t_news")
+@Table(name = "t_local_feeling")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Localfeeling extends BaseEntity
 {
@@ -42,6 +43,16 @@ public class Localfeeling extends BaseEntity
     private String            link;                 // 链接
 
     private int               type;                 // 0：求购 1：供应
+
+    @Transient
+    public String getStatusName()
+    {
+        if (ispublish)
+        {
+            return "已发布";
+        }
+        return "未发布";
+    }
 
     public String getSource()
     {

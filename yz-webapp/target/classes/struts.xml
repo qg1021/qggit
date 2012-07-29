@@ -4,7 +4,7 @@
 <struts>
 	<constant name="struts.convention.default.parent.package" value="crud-default" />
 	<constant name="struts.convention.package.locators" value="web" />
-	<constant name="struts.convention.package.locators.basePackage" value="com.drcl.jsexam.oems.web" />
+	<constant name="struts.convention.package.locators.basePackage" value="com.drcl.yz.web" />
 	<constant name="struts.multipart.maxSize" value="524288000" />
 	<constant name="struts.action.extension" value="action,excsec"/>
 	<constant name="struts.ognl.allowStaticMethodAccess" value="true"/>

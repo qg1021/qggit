@@ -27,6 +27,7 @@
 package com.drcl.yz.util;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
@@ -193,6 +194,21 @@ public class CommonUtils
         {
             return "0%";
         }
+    }
+
+    /**
+     * 
+     * 获取当前时间
+     * 
+     * @since 2012-7-29
+     * @author qingang
+     * @param format
+     * @return
+     */
+    public static String getCurrentDate(String format)
+    {
+        return new SimpleDateFormat(format).format(new Date());
+
     }
 
     public static void main(String[] args) throws Exception

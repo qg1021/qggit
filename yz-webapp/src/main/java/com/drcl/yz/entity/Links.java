@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -41,7 +42,17 @@ public class Links extends BaseEntity
 
     private String            link;                 // 链接
 
-    private int               type;                 // 0：求购 1：供应
+    private int               type;
+
+    @Transient
+    public String getStatusName()
+    {
+        if (ispublish)
+        {
+            return "已发布";
+        }
+        return "未发布";
+    }
 
     public String getContent()
     {

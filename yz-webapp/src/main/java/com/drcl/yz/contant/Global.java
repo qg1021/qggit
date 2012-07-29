@@ -44,47 +44,20 @@ public class Global
 {
     public final static int          MAX_PAGESIZE          = 2000;                 // 最大数据量
 
-    public final static String       STYLE_PATH            = "/style";
-
-    public final static String       SCORE_PATH            = "/score";             // 中心服务上传的分数包
-
-    public final static String       SCORE_NAME            = "Recycle_";
-
-    public final static String       ARRANGE_PATH          = "/arrange";
-
-    public final static String       TEMPLATE_PATH         = "template";
-
-    public final static String       CETTEMPLATE_PATH      = "/certtemplate";      // 保存考生个人照片的路径
-
-    public final static String       STUDENTPIC_PATH       = "/studentpic";        // 保存考生个人照片的路径
-
-    public final static String       IDCARD_PATH           = "/idcardpic";         // 保存考生身份证扫描件的路径
-
-    public final static int          STUDENTPIC_MAXSIZE    = 2 * 1024;             // 保存考生个人照片的文件最大字节
-
-    public final static int          IDCARD_MAXSIZE        = 2 * 1024;             // 保存考生个人照片的文件最大字节
-
-    public final static int          STUDENTPIC_MAXELEMENT = 1200;                 // 保存考生个人照片的照片最大像素
-
-    public final static int          STUDENTPIC_MINELEMENT = 600;                  // 保存考生个人照片的照片最小像素
-
-    public final static String       STUDENTPIC_EXT        = "jpg";                // 保存考生个人照片的允许的格式
-
-    public final static String       STUDENTPIC_PREFIX     = "stupic";             // 保存考生个人照片的照片前缀名
-
-    public final static String       TABLE_DELETE          = "D";                  // jquery
-
-    // table
-    // 删除标识位
-
-    public final static String       TABLE_EDIT            = "E";                  // jquery
-
     // table
     // 编辑标识位
 
     public final static String       EXPORT_SUCCESS        = "导出成功";
 
     public final static String       EXPORT_LOSE           = "导出失败";
+
+    public final static String       PUBLISH_SUCCESS       = "发布成功";
+
+    public final static String       PUBLISH_LOSE          = "发布失败";
+
+    public final static String       CANCEL_SUCCESS        = "取消成功";
+
+    public final static String       CANCEL_LOSE           = "取消失败";
 
     public final static String       AUDIT_SUCCESS         = "审核成功";
 
@@ -102,9 +75,9 @@ public class Global
 
     public final static String       UPLOAD_LOSE           = "上传失败";
 
-    public final static String       DELETE_SUCCESS        = "上传成功";
+    public final static String       DELETE_SUCCESS        = "删除成功";
 
-    public final static String       DELETE_LOSE           = "上传失败";
+    public final static String       DELETE_LOSE           = "删除失败";
 
     public final static String       FIELD_EXISTED         = "此时间单元已存在";
 
@@ -112,35 +85,13 @@ public class Global
 
     public final static String       IMPORT_NO_FILE        = "没有导入文件";
 
-    public static List<LabelValue>   FLOW_TYPES            = Lists
+    public static List<LabelValue>   BASEDATA_TYPES        = Lists
                                                                    .newArrayList();
 
-    public final static double       DEFAULT_PASS          = 60;
-
-    public final static double       DEFAULT_EXCELLENT     = 90;
-
-    public final static String       EV_SUBJECT            = "所有科目";
-
-    public final static String       EV_AREA               = "所有考区";
-
-    public final static String       EV_SITE               = "所有考点";
-
-    public static String[]           LETTER_ARRAY          = { "A", "B", "C",
-            "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
-            "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
     static
     {
-        FLOW_TYPES.add(new LabelValue("0", "省考务设置考次科目和考试配置"));
-        FLOW_TYPES.add(new LabelValue("1", "省考务设置和分配时间单元"));
-        FLOW_TYPES.add(new LabelValue("2", "省考务设置报名条件和时间表"));
-        FLOW_TYPES.add(new LabelValue("3", "省考务下发考试安排至考区"));
-        FLOW_TYPES.add(new LabelValue("4", "考区汇总上报考试资源至省考务"));
-        FLOW_TYPES.add(new LabelValue("5", "考区审核并上报通过名单"));
-        FLOW_TYPES.add(new LabelValue("6", "省考务下发准考名单和未通过名单至考区"));
-        FLOW_TYPES.add(new LabelValue("7", "考区汇总上报报名确认名单"));
-        FLOW_TYPES.add(new LabelValue("8", "省考务排考"));
-        FLOW_TYPES.add(new LabelValue("9", "省考务生成准考证"));
-        FLOW_TYPES.add(new LabelValue("10", "省考务下发和导出考务信息"));
+        BASEDATA_TYPES.add(new LabelValue("0", "学历"));
+        BASEDATA_TYPES.add(new LabelValue("1", "类别"));
 
     }
 
