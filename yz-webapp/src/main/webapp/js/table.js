@@ -1,18 +1,21 @@
 function jumpPage(pageNo) {
-	$("input[name='page.pageNo']").each(function(){
-		$(this).val(pageNo);		
-	});
-	if ($("#theType").val()!=null) {
-		if ($("#theType").val()==2) {
-			$("#subsearchForm").submit();
-		}else if ($("#theType").val()==3) {
-			$("#idsearchForm").submit();
-		}else {
-			$("#searchForm").submit();
-		}
-	}else {
-		$("#mainForm").submit();
-	}
+	$("#pageNo").val(pageNo);
+	$("#mainForm").submit();
+}
+function mustjumpPage(pageNo) {
+	$("#mustpageNo").val(pageNo);
+	$("#tabtype").val(1);
+	$("#mainForm").submit();
+}
+function selectjumpPage(pageNo) {
+	$("#selectpageNo").val(pageNo);
+	$("#tabtype").val(2);
+	$("#mainForm").submit();
+}
+function finishedjumpPage(pageNo) {
+	$("#finishedpageNo").val(pageNo);
+	$("#tabtype").val(3);
+	$("#mainForm").submit();
 }
 
 function sort(orderBy, defaultOrder) {

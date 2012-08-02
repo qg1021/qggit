@@ -88,9 +88,14 @@ public class LinksAction extends CrudActionSupport<Links>
     {
         if (mtype == 0)
         {
-            return "新闻焦点";
+            return "友情链接";
         }
-        return "热点资讯";
+        else
+            if (mtype == 1)
+            {
+                return "广告推广";
+            }
+        return "图片新闻";
     }
 
     @Autowired

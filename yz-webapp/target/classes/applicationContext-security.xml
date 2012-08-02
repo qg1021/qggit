@@ -14,8 +14,8 @@
 		<s:intercept-url pattern="/css/**" filters="none" />
 		<s:intercept-url pattern="/image/**" filters="none" />
 		<s:intercept-url pattern="/js/**" filters="none" />
-		<s:intercept-url pattern="/backend/*.action" access="hasAnyRole('管理员')" />
-		<s:form-login login-page="/login.action" default-target-url="/login.action" authentication-failure-url="/login.action?error=true"  />
+		<s:intercept-url pattern="/backend/*" access="hasAnyRole('管理员')" />
+		<s:form-login login-page="/login.action" default-target-url="/backend/index.action" authentication-failure-url="/login.action?error=true"  />
 		<s:logout logout-success-url="/login.action"/>
 	</s:http>
 

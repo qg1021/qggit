@@ -29,14 +29,18 @@ public class Introduction extends BaseEntity
 
     private String            content;              // 内容
 
-    private String            type;                 // 类型
+    private int               type;                 // 类型
 
-    public String getType()
+    public final static int   TYPE_0           = 0;
+
+    public final static int   TYPE_1           = 1;
+
+    public int getType()
     {
         return type;
     }
 
-    public void setType(String type)
+    public void setType(int type)
     {
         this.type = type;
     }

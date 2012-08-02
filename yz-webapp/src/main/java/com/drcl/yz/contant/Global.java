@@ -28,6 +28,7 @@ package com.drcl.yz.contant;
 
 import java.util.List;
 
+import cn.common.lib.util.web.PropertyUtils;
 import cn.common.lib.vo.LabelValue;
 
 import com.google.common.collect.Lists;
@@ -88,10 +89,13 @@ public class Global
     public static List<LabelValue>   BASEDATA_TYPES        = Lists
                                                                    .newArrayList();
 
+    public static String             picpath;
+
     static
     {
         BASEDATA_TYPES.add(new LabelValue("0", "学历"));
         BASEDATA_TYPES.add(new LabelValue("1", "类别"));
+        picpath = PropertyUtils.getProperty("upload.path");
 
     }
 

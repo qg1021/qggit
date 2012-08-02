@@ -75,7 +75,7 @@ public class BusinessAction extends CrudActionSupport<Business>
     public String getTypeName()
     {
 
-        return "招商信息";
+        return "域名出售";
     }
 
     @Autowired

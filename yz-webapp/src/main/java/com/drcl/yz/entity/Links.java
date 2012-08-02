@@ -44,6 +44,12 @@ public class Links extends BaseEntity
 
     private int               type;
 
+    public final static int   TYPE_0           = 0;
+
+    public final static int   TYPE_1           = 1;
+
+    public final static int   TYPE_2           = 0;
+
     @Transient
     public String getStatusName()
     {

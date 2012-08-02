@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="/common/taglibs.jsp" %>
+<%@page import="com.drcl.yz.contant.Global"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,10 +8,17 @@
 	<meta content="outsidearea" name="activemenu" />
 	<title>${typeName}</title>
 	<link href="${ctx}/css/master.css" type="text/css" rel="stylesheet"/> 
+	<link href="${ctx}/css/layer.css" rel="stylesheet" type="text/css"/>
+	<link href="${ctx}/css/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" media="screen" />
 	<link href="${ctx}/js/validate/jquery.validate.css" type="text/css" rel="stylesheet"/>
 	<link rel="stylesheet" href="${ctx}/KindEditor/themes/default/default.css" />
 	<link rel="stylesheet" href="${ctx}/KindEditor/plugins/code/prettify.css" />
 	<script src="${ctx}/js/jquery.js" type="text/javascript"></script>
+	<script src="${ctx}/js/ajaxfileupload.js" type="text/javascript"></script>
+	<script src="${ctx}/js/layer.js" type="text/javascript"></script>
+	<script src="${ctx}/js/jcommon.js" type="text/javascript"></script>
+	<script type="text/javascript" src="${ctx}/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="${ctx}/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 	<script src="${ctx}/js/validate/jquery.validate.js" type="text/javascript"></script>
 	<script src="${ctx}/js/validate/messages_cn.js" type="text/javascript"></script>
 	<script type="text/javascript" src="${ctx}/KindEditor/kindeditor-min.js"></script>
@@ -18,22 +26,17 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		//聚焦第一个输入框
-		$("#name").focus();
+		$("a#picexample").fancybox();
+		$("#title").focus();
 		$("#inputForm").validate({
 			rules: {
 				title: {
 					required:true
-				},
-				content: {
-					required:true
-				},
+				}
 			},
 			messages: {
 				title: {
 					required: "请输入标题"
-				},
-				content: {
-					required: "请输入内容"
 				}
 			},
 	        errorPlacement: function(error, element) {   
@@ -74,6 +77,13 @@
 </script>
 </head>
 <body>
+<!-- JS遮罩层 --> 
+	<div id="fullbg"></div> 
+	<!-- end JS遮罩层 --> 
+	<!-- 对话框 --> 
+	<div id="dialog"> 
+		<div id="dialog_content"></div> 
+	</div>
 <div id="wrapper">
 	<%@ include file="/common/top.jsp"%>
 	<!--the end of head-->
@@ -96,12 +106,26 @@
 			</table>
 			<div class="pagehead01"></div>
 				<div class="top_serach_box">
-					<form id="inputForm" name="inputForm" action="business!save.action?mtype=${mtype}" method="post">
+					<form id="inputForm" name="inputForm" action="business!save.action" method="post">
 						<input type="hidden" id="id" name="id" value="${id}"/>
 						<ul class="form district_edit_form">
 					  		<li>
 					  			<label>标题<span class="colorred">*</span></label>
-					  			<input id="title" name="title" value="${title}" type="text" maxlength="100" style="width:300px;" />
+					  			<input id="title" name="title" value="${title}" type="text" maxlength="100" style="width:350px;" />
+					  		</li>
+					  		<li>
+					  			<label>配图<span class="colorred">*</span></label>
+					  			<input name="file" type="file" id="file" onchange="ajaxUploadPic('../upload.excsec');"/>
+		        				<span id="picspan">
+		        					<s:if test="picurl!=null">
+		        						<a id="picexample" href="..<%=Global.picpath%>/${picurl}">预览</a>
+		        					</s:if>
+		        					<s:else>
+		        						<a id="picexample" href="" style="display:none">查看</a>
+		        					</s:else>
+		        				</span>
+		        				<input type="hidden" id="picurl" name="picurl" value="${picurl}"/>
+		        				<input type="hidden" id="baseurl" name="baseurl" value="..<%=Global.picpath%>"/>
 					  		</li>
 					  		<li >
 					  			<label style="vertical-align: top;">内容</label>

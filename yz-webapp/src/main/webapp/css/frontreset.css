@@ -1,0 +1,196 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+	color: #333;
+	font: 12px Tahoma, Geneva, Arial, sans-serif;
+	margin: 0;
+	background:#fff;
+}
+body, ul, li, ol, dt, dd, dl, p, h1, h2, h3, h4, h5, h6, h7, input, select,from{
+	margin: 0;
+	padding: 0;
+}
+body {
+	scrollbar-face-color:#f7f7f7;
+	scrollbar-highlight-color:#ccc;
+	scrollbar-3dlight-color:#fff;
+	scrollbar-shadow-color:#ccc;
+	scrollbar-darkshadow-color:#fff;
+	scrollbar-track-color:#fafafa;
+	scrollbar-arrow-color:#b3b3b3;
+}
+img {
+	border: 0 none;
+	vertical-align:top;
+}
+ul, ol {
+	list-style: none outside none;
+	padding: 0;
+	margin: 0;
+}
+input {
+	vertical-align: middle;
+	height: 24px;
+	line-height: 24px;
+}
+select {
+	height: 24px;
+	vertical-align: middle;
+	color: #666;
+	font-size: 12px;
+	padding: 2px 2px;
+	border: 1px solid #ddd;
+}
+textarea {
+	border: 1px solid #ddd;
+	font: 12px Tahoma, Geneva, Arial, sans-serif;
+	background-color: #fff;
+	padding: 5px;
+}
+label {
+	font-family: Tahoma;
+	vertical-align: middle;
+}
+a:hover {
+	text-decoration: underline;
+}
+input[type="text"]{
+	border: 1px solid #ddd;
+	vertical-align:middle;
+	-moz-border-radius: 2px 2px 2px 2px;
+	background-color: #fff;
+	font-size:12px;
+}
+
+table {border-collapse:collapse;	border-spacing:0;}
+input[type="radio"],input[type="checkbox"]{border:none;vertical-align:middle;}
+/********  head content  footer  ******/
+
+#wrapper{ margin: 0 auto;overflow:hidden;}
+
+#head{ width:960px;margin: 0 auto;overflow:hidden;}
+
+#content{width:960px;margin: 0 auto;overflow:hidden;}
+
+#footer{width:960px; margin: 0 auto;overflow:hidden;}
+
+/*  黑白字体  */
+.color333{color:#333;	} /*  深灰色  */
+.color666{color:#666;	} /*  中等深灰色  */
+.color999{color:#999;	} /*  50%灰色  */
+.colorccc{color:#ccc;	} /*  #ccc灰色  */
+.coloreee{color:#eee;	} /*  #eee灰色  */
+
+.fontbold{font-weight:bold;} /*  粗体  */
+
+.font_s12 {font-size:12px;} 
+.font_s14 {font-size:14px;} 
+.font_s16 {font-size:16px;}
+.font_s18 {font-size:18px;}
+.font_s20 {font-size:20px;}
+
+.lh160{line-height:160%;}
+.lh180{line-height:180%;}
+.lh210{line-height:210%;}
+.lh270{line-height:270%;}
+
+/*  多于文字 显示为......  */
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-moz-binding: url('ellipsis.xml#ellipsis');
+	display: block;
+	}
+.wordbreak {
+	word-wrap: break-word;
+	overflow: hidden;
+}
+/*  全局 margin 属性   */
+.m0{margin:0}
+.m5{margin:5px;}
+.p5{padding:5px;}
+.m10{margin:10px;}
+.p10{padding:10px;}
+
+.ml5  {margin-left:5px;}
+.ml10{margin-left:10px;}
+.ml15{margin-left:15px;}
+.ml20{margin-left:20px;}
+.ml30{margin-left:30px;}
+
+.mr5  {margin-right:5px;}
+.mr10{margin-right:10px;}
+.mr15{margin-right:15px;}
+.mr20{margin-right:20px;}
+.mr30{margin-right:30px;}
+
+.mt5  {margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt30{margin-top:30px;}
+
+.mb5  {margin-bottom:5px;}
+.mb10{margin-bottom:10px;}
+.mb15{margin-bottom:15px;}
+.mb20{margin-bottom:20px;}
+.mb30{margin-bottom:30px;}
+
+/*  全局 padding  属性   */
+
+.pl5 {padding-left:5px;}
+.pl10{padding-left:10px;}
+.pl15{padding-left:15px;}
+.pl20{padding-left:20px;}
+.pl30{padding-left:30px;}
+
+.pt5 {padding-top:5px;}
+.pt10{padding-top:10px;}
+.pt15{padding-top:15px;}
+.pt20{padding-top:20px;}
+.pt30{padding-top:30px;}
+
+.pb5 {padding-bottom:5px;}
+.pb10{padding-bottom:10px;}
+.pb15{padding-bottom:15px;}
+.pb20{padding-bottom:20px;}
+.pb30{padding-bottom:30px;}
+
+.pr5 {padding-right:5px;}
+.pr10{padding-right:10px;}
+.pr15{padding-right:15px;}
+.pr20{padding-right:20px;}
+.pr30{padding-right:30px;}
+
+/*  全局 文字对齐  属性   */
+
+.ta_c{text-align: center;}
+.ta_l{text-align: left;}
+.ta_r{text-align: right;}
+
+.ov_h{overflow: hidden;}
+.ov_s{overflow: scroll;}
+.db{display:block}
+.dn {display: none;}
+.di {display: inline;}
+.dib{display:inline-block;-moz-inline-stack:inline-block;}
+
+.clearb{clear: both}
+.clearr{clear: right}
+.clearl{clear: left;}
+
+.prel{position: relative;}
+.pabs{position: absolute;}
+
+.rr{float:right}
+.ll{float:left}
+
+.del_float {
+	clear: both;
+	height: 0;
+	font-size: 0;
+	overflow: hidden;
+}
+

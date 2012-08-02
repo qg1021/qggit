@@ -1,0 +1,257 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*全局a定义颜色*/
+a{
+	color: #C81E1F;
+	text-decoration: none;
+}
+
+
+
+/*返回江苏首页背景颜色*/
+.style_home_color{
+	background:#ffc600;
+}
+
+/*导航*/
+.style_navbg_left{
+	background: url("../image/style_nav.gif");
+}
+
+.style_navbg_centent li{
+	background: url("../image/style_nav.gif");
+}
+	
+.style_navbg_right{
+	background: url("../image/style_nav.gif");
+}
+
+.style_nav_selected{
+	background: url("../image/style_nav_selected.png");
+	color: #cb0000!important;
+}
+
+.style_top_button a{
+	background: url("../image/style_nav_rightbutton.gif");
+}
+
+.style_top_button a:hover{
+	background: url("../image/style_nav_rightbutton.gif");
+	}
+.style_bottom_nav{
+	background:#fafbe8;
+	}
+.style_logbtn{
+	 background: url("../image/style_nav_loginbtn.gif");
+	 }
+.style_regbtn{
+	background: url("../image/style_nav_loginbtn.gif");
+	}
+.style_sideBar{
+	border-color:#f77f8a;
+	}
+.style_sideBar li{
+	border-bottom-color:#f77f8a;
+	}
+.style_sideBar_icon{
+	background: url("../image/style_sideBar_icon.gif");
+	}
+.style_sideBar li:hover{
+	background: #f3dada;
+	}
+.style_submenu{
+	border-color:#f77f8a;
+	background: #f3dada;
+	}
+/*.style_sub_nav{
+	border-left-color: #a6dafa;
+	border-right-color: #a6dafa;
+	border-bottom-color: #a6dafa;
+	}	
+.style_nav_hover{
+	background: url("../image/nav_hover.png");
+	color:#017CC8!important;
+	}*/	
+	
+	
+	
+/*导航 end*/
+
+/*用于数字滑动门*/
+.slide_triggers .style_img_color{
+	border-color:#f60;
+	background:#f60;
+	}
+
+
+/*用于标题*/
+.style_titlecolor {
+    color: #C81E1F;
+	}
+
+/*用于新闻内容标题*/
+.style_newstitle_color {
+    color: #C81E1F;
+}
+
+
+/*用于栏目导航title*/
+.style_linecolor {
+	border-bottom-color:#C81E1F;
+}
+	
+	
+/*搜索按钮*/
+.style_searchbtn {
+    background: url("../image/style_searchbtn.gif");
+}
+
+/*高级搜索按钮*/
+.style_advancedsearch01,.style_advancedsearch02{
+	background: url("../image/style_advanced_search.gif");
+	}
+
+	
+	
+/*课程中心*/
+.style_coursetag{
+	background-color: #f6eded;
+	}
+
+/*正式学习按钮*/
+.style_learningbtn{
+	background: url("../image/style_learningbtn.gif");
+	color: #C81E1F;
+	}
+
+/*翻页当前状态*/
+.style_currentcolor a{
+	color:#FE8C1A;
+	}
+
+/*特色课程门数*/
+.style_coursestrong{
+	color:#C81E1F;
+	}
+
+/*footer line*/
+.style_footerline{
+	background:url("../image/style_footer_line.gif");
+	}
+
+/*好习惯是健康的银行*/
+.style_courseborder{
+	background-color: #fbeeee;
+	border-color:#f5c8c8;
+	}
+
+
+	 	 
+	 
+/*试点icon bg color*/
+.style_piloticon{
+	background:url("../image/style_piloticon.gif");
+	}
+
+/*收藏课程背景*/
+.style_collectbg{
+	background-color: #fbeeee;
+	}
+
+
+ /*小按钮*/
+.style_button01{
+	background: url("../image/style_button01.gif");
+	color: #C81E1F;
+	}
+	
+/*实名信息，申请按钮颜色*/
+.style_fillinfo_btncolor{
+	color:#017CC8;
+	}
+.style_application_btncolor{
+	color:#f98008;
+	}
+	
+/*百分率*/	
+.style_graph{
+	background: url("../image/style_graph.gif");
+	}
+.graph{
+	background: url("../image/style_graph.gif");
+	}
+
+
+
+/*考试 箭头指示*/
+.style_examgor{
+	background: url("../image/style_arrow_right.png");
+	}
+
+
+
+/*用于数字颜色*/
+.style_numeral_color{
+	color:#FE8C1A;
+	}
+
+/*新闻列表左边menu*/
+.style_spmenu_bgcolor li{
+	background: url("../image/style_submenu_bg.gif")
+	}
+.style_menuborder_color{
+	background:#fbebeb;
+	border-color:#f38080;
+	}
+.style_spmenu_fontcolor a{
+	color: #C81E1F;
+	}
+.style_selmenu_color{
+	background:#f5dce0 url("../image/style_submenu_icon.gif")
+	}
+.style_selmenu_color a{
+	color: #C81E1F;
+	}
+.style_spmenu2_bgcolor li{
+	background: url("../image/style_submenu_bg2.gif")
+	}
+
+/*大按钮，用于登录*/
+.style_big_button{
+	background: url("../image/style_button_big.gif");
+	color:#C81E1F;
+	}
+
+/*新用户注册按钮*/
+.style_userreg_btn{
+	background: url("../image/style_userreg.gif");
+	}
+
+
+/*学习管理图标*/	
+.style_arrowicon{
+	background:url("../image/style_arrow_icon.gif");
+	}
+.style_borderbg a:hover{ 
+	border-color:#C81E1F;
+	background-color: #ec9c9e;
+	}
+.style_adminbox{
+	border-color:#C81E1F;
+	}
+
+
+/*****网站地图页面样式*****/
+.style_sitetitle{
+	background:#FCF9E6;
+	border-color:#EBE6C9;
+	}
+	
+/*收藏图标*/
+.style_collection_button{
+	background:url("../image/style_collection.gif");
+	}
+	
+
+

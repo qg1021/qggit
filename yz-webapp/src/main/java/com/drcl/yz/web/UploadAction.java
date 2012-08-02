@@ -26,11 +26,12 @@
 //-------------------------------------------------------------------------
 package com.drcl.yz.web;
 
+import java.awt.Image;
 import java.io.File;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.imageio.ImageIO;
 
 import org.apache.commons.lang.time.DateFormatUtils;
 import org.apache.struts2.ServletActionContext;
@@ -38,13 +39,9 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
-import org.springside.modules.utils.web.struts2.Struts2Utils;
 
 import cn.common.lib.util.file.FileUtils;
-import cn.common.lib.util.web.ParamUtils;
-import cn.common.lib.util.web.PropertyUtils;
 import cn.common.lib.util.web.RequestUtils;
-import cn.common.lib.vo.LabelValue;
 
 import com.drcl.yz.contant.Global;
 import com.drcl.yz.util.FileUploadUtils;
@@ -86,6 +83,13 @@ public class UploadAction extends ActionSupport
 
     private int               height;
 
+    /**
+     * 上传图片
+     * 
+     * @return
+     * @throws Exception
+     */
+
     @Override
     public String execute() throws Exception
     {
@@ -94,9 +98,7 @@ public class UploadAction extends ActionSupport
                 .getServletContext(), "/");
 
         // 设置文件路径，优先存储在本地，如本地存储失败，则存储至服务器路径上
-        String localFilePath = PropertyUtils.getProperty("upload.path",
-                realPath)
-                + "upload" + "/" + date;
+        String localFilePath = realPath + Global.picpath + "/" + date;
 
         try
         {
@@ -104,17 +106,25 @@ public class UploadAction extends ActionSupport
             {
                 fileName = "";
                 List<String> fileTypes = Lists.newArrayList();
-                fileTypes.add("zip");
-                fileTypes.add("rar");
+                fileTypes.add("jpg");
+                fileTypes.add("gif");
+                fileTypes.add("png");
+                Image img = ImageIO.read(file);
+                if (img == null)
+                {
+                    message = "上传的文件非图片不符合要求";
+                    return SUCCESS;
+                }
+
                 message = FileUploadUtils.fileTypeValidate(fileFileName, file,
                         fileTypes, 1024);
 
                 if (message == null)
                 {
                     fileName = FileUtils.saveFile(localFilePath, file,
-                            fileFileName, "style");
+                            fileFileName, "im");
                     fileName = "/" + date + "/" + fileName;
-                    message = Global.UPLOAD_SUCCESS;
+                    message = "上传成功";
 
                 }
             }
@@ -123,69 +133,10 @@ public class UploadAction extends ActionSupport
         catch (Exception e)
         {
             e.printStackTrace();
-            message = Global.UPLOAD_LOSE;
+            message = "对不起,文件上传失败了!";
         }
 
         return SUCCESS;
-    }
-
-    // 上传附件
-    public String uploadAttach() throws Exception
-    {
-        // 验证附件的格式和大小
-        message = FileUploadUtils.fileTypeValidate(fileFileName, file,
-                Global.ATTACHFILETYPES, Global.ATTACH_MAXSIZE);
-
-        if (message == null)
-        {
-            String date = DateFormatUtils.format(new Date(), "yyyyMM");
-            String realPath = RequestUtils.getRealPath(ServletActionContext
-                    .getServletContext(), "/");
-
-            // 设置文件路径，优先存储在本地，如本地存储失败，则存储至服务器路径上
-            String localFilePath = PropertyUtils.getProperty("upload.path",
-                    realPath)
-                    + Global.ATTACH_PATH + "/" + date;
-
-            try
-            { // 　存储文件，获得存储后的文件名
-                fileName = FileUtils.saveFile(localFilePath, file,
-                        fileFileName, Global.ATTACH_PREFIX);
-                fileName = "/" + date + "/" + fileName;// 附件后加上日期方便保存到数据库中
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-                message = "对不起,附件上传失败了!";
-            }
-        }
-        return SUCCESS;
-    }
-
-    // 删除附件
-    public String deleteAttch()
-    {
-        try
-        {
-            HttpServletRequest request = Struts2Utils.getRequest();
-            String attachmentPath = ParamUtils.getParameter(request,
-                    "attachmentPath", null);
-            String filePath = PropertyUtils.getProperty("upload.path",
-                    RequestUtils.getRealPath(ServletActionContext
-                            .getServletContext(), "/"))
-                    + Global.ATTACH_PATH + attachmentPath;
-
-            // 判断附件是否已存在,如存在则删除
-            if (!FileUploadUtils.deleteFile(filePath))
-            {
-                Struts2Utils.renderJson(new LabelValue("对不起，附件删除失败", ""));
-            }
-        }
-        catch (Exception e)
-        {
-            Struts2Utils.renderJson(new LabelValue("系统异常，删除失败", ""));
-        }
-        return null;
     }
 
     public File getFile()

@@ -42,7 +42,13 @@ public class Localfeeling extends BaseEntity
 
     private String            link;                 // 链接
 
-    private int               type;                 // 0：求购 1：供应
+    private int               type;
+
+    public final static int   TYPE_0           = 0;
+
+    public final static int   TYPE_1           = 1;
+
+    public final static int   TYPE_2           = 2;
 
     @Transient
     public String getStatusName()

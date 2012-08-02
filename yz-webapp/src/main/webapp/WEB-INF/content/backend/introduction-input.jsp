@@ -23,17 +23,11 @@
 			rules: {
 				title: {
 					required:true
-				},
-				content: {
-					required:true
 				}
 			},
 			messages: {
 				title: {
 					required: "请输入标题"
-				},
-				content: {
-					required:"输入内容"
 				}
 			},
 	        errorPlacement: function(error, element) {   
@@ -103,6 +97,7 @@
 					  			<label>标题<span class="colorred">*</span></label>
 					  			<input id="title" name="title" value="${title}" type="text" maxlength="100" style="width:300px;" />
 					  		</li>
+					  		
 
 					  		<li >
 					  			<label style="vertical-align: top;">内容</label>
@@ -112,7 +107,7 @@
 					  	</ul>
 						<p class="button_box">
 							<button class="btn_confirm" type="submit">保存</button> 
-							<button class="btn_cancell" type="button" onclick="window.location.href='introduction.action'">取消</button>
+							<button class="btn_cancell" type="button" onclick="window.location.href='introduction.action?mtype=${mtype}'">取消</button>
 						</p>
 						
 					</form>

@@ -88,9 +88,17 @@ public class LocalfeelingAction extends CrudActionSupport<Localfeeling>
     {
         if (mtype == 0)
         {
-            return "新闻焦点";
+            return "扬州特产";
         }
-        return "热点资讯";
+        else
+            if (mtype == 1)
+            {
+                return "扬州旅游";
+            }
+            else
+            {
+                return "扬州景点";
+            }
     }
 
     @Autowired

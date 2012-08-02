@@ -26,7 +26,7 @@
 		}
 
 		if(confirm("确认删除？")){
-			$("#mainForm").attr("action","introduction!batchDelete.action").submit();
+			$("#mainForm").attr("action","introduction!batchDelete.action?mtype=${mtype}").submit();
 		}
 	}
 	
@@ -65,7 +65,7 @@
 			        </li>
     			</ul>
     			<p class="ll mt15">
-    				<button id="btnCreate" type="button" onclick="window.location.href='introduction!input.action'">新增</button>
+    				<button id="btnCreate" type="button" onclick="window.location.href='introduction!input.action?mtype=${mtype}'">新增</button>
     				<button id="btnDelete" type="button" onclick="onBatchDelete();">删除</button>
     			</p>
 	    			<table class="tablebox">
@@ -81,8 +81,8 @@
 						        <td title="${name}"><common:cut string="${title}" len="30"/></td>
 						        <td>${typeName}</td>
 						        <td>
-						        	<a href="introduction!input.action?id=${id}">修改</a>&nbsp;&nbsp;
-						        	<a href="javaScript:delRecord('introduction!delete.action?id=${id}');">删除</a>
+						        	<a href="introduction!input.action?id=${id}&mtype=${mtype}">修改</a>&nbsp;&nbsp;
+						        	<a href="javaScript:delRecord('introduction!delete.action?id=${id}&mtype=${mtype}');">删除</a>
 						        </td>
 						    </tr>
 					    </s:iterator>

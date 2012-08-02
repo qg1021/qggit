@@ -186,6 +186,10 @@ public class IntroductionAction extends CrudActionSupport<Introduction>
     {
         try
         {
+            if (id == null)
+            {
+                entity.setType(mtype);
+            }
             introductionManager.save(entity);
             this.addActionMessage(Global.SAVE_SUCCESS);
         }
