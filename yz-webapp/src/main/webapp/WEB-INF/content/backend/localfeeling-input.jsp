@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta content="outsidearea" name="activemenu" />
+	<%@ include file="/common/meta.jsp" %>
 	<title>${typeName}</title>
 	<link href="${ctx}/css/master.css" type="text/css" rel="stylesheet"/> 
 	<link href="${ctx}/js/validate/jquery.validate.css" type="text/css" rel="stylesheet"/>

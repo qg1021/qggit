@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>后台登录</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%@ include file="/common/meta.jsp" %>
 <link href="${ctx}/css/admin.css" type="text/css" rel="stylesheet" />
 <link href="${ctx}/js/validate/jquery.validate.css" type="text/css" rel="stylesheet" />
 <script src="${ctx}/js/jquery.js" type="text/javascript"></script>

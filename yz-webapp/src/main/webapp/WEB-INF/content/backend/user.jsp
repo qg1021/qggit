@@ -1,33 +1,43 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="/common/taglibs.jsp" %>
+<%@page import="com.drcl.yz.contant.Global"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<%@ include file="/common/meta.jsp" %>
-	<title>${typeName}</title>
 	<link href="${ctx}/css/master.css" type="text/css" rel="stylesheet"/> 
 	<link href="${ctx}/js/validate/jquery.validate.css" type="text/css" rel="stylesheet"/>
-	<link rel="stylesheet" href="${ctx}/KindEditor/themes/default/default.css" />
-	<link rel="stylesheet" href="${ctx}/KindEditor/plugins/code/prettify.css" />
 	<script src="${ctx}/js/jquery.js" type="text/javascript"></script>
 	<script src="${ctx}/js/validate/jquery.validate.js" type="text/javascript"></script>
 	<script src="${ctx}/js/validate/messages_cn.js" type="text/javascript"></script>
-	<script type="text/javascript" src="${ctx}/KindEditor/kindeditor-min.js"></script>
-	<script type="text/javascript" src="${ctx}/KindEditor/lang/zh_CN.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
-		//聚焦第一个输入框
-		$("#name").focus();
+		$("#opassword").focus();
 		$("#inputForm").validate({
 			rules: {
-				title: {
+				opassword: {
+					required:true,
+					equalTo: "#opass"
+				},
+				password: {
 					required:true
+				},
+				qpassword: {
+					required:true,
+					equalTo: "#password"
 				}
 			},
 			messages: {
-				title: {
-					required: "请输入标题"
+				opassword: {
+					required:"输入旧密码",
+					equalTo: "旧密码输入不正确"
+				},
+				password: {
+					required:"输入新密码"
+				},
+				qpassword: {
+					required:"再输入一次新密码",
+					equalTo: "两次输入的密码不相同"
 				}
 			},
 	        errorPlacement: function(error, element) {   
@@ -39,35 +49,16 @@
 		        }
 		}); 
 	});
-	var htmlEditor = null;
-	KindEditor.ready(function(K) {
-		htmlEditor = K.create('textarea[name=content]', {
-			cssPath : '${ctx}/KindEditor/themes/default/default.css',
-			uploadJson : '${ctx}/KindEditor/jsp/upload_json.jsp',
-			fileManagerJson : '${ctx}/KindEditor/jsp/file_manager_json.jsp',
-			allowFileManager : true	//允许查看文件
-		});
-	});
-	function onSubmit() {
-		 if($("#inputForm").valid()){
-		 if(!htmlEditor.isEmpty()){
-		 	$("#content").val(htmlEditor.html());
-		 	$("#inputForm").submit();
-		 }	else{
-		 	alert("内容不能为空");
-		 }
-		}
-	}
-	document.onkeydown = function(e){    
-		e = e || window.event;   
-		if(e.keyCode === 13){        
-		 onSubmit();   
-		}
-	};
-
 </script>
 </head>
 <body>
+<!-- JS遮罩层 --> 
+	<div id="fullbg"></div> 
+	<!-- end JS遮罩层 --> 
+	<!-- 对话框 --> 
+	<div id="dialog"> 
+		<div id="dialog_content"></div> 
+	</div>
 <div id="wrapper">
 	<%@ include file="/common/top.jsp"%>
 	<!--the end of head-->
@@ -79,7 +70,7 @@
 		<div class="right_content">
 			<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
 				<tr  height="28">
-					<td  background="${ctx}/image/admin/title_bg1.jpg">当前位置&gt;&gt;${typeName}</td>
+					<td  background="${ctx}/image/admin/title_bg1.jpg">当前位置&gt;&gt;修改口令</td>
 				</tr>
 				<tr>
 					<td bgcolor="#b1ceef" height="1"></td>
@@ -90,30 +81,33 @@
 			</table>
 			<div class="pagehead01"></div>
 				<div class="top_serach_box">
-					<form id="inputForm" name="inputForm" action="news!save.action?mtype=${mtype}" method="post">
+					<div id="message" style="line-height: 35px;">
+						<s:actionmessage theme="custom" cssClass="tipbox"/>
+					</div>
+					<form id="inputForm" name="inputForm" action="user!save.action" method="post">
 						<input type="hidden" id="id" name="id" value="${id}"/>
+						<input type="hidden" id="opass" name="opass" value="${password}"/>
 						<ul class="form district_edit_form">
 					  		<li>
-					  			<label>标题<span class="colorred">*</span></label>
-					  			<input id="title" name="title" value="${title}" type="text" maxlength="100" style="width:300px;" />
+					  			<label>用户名</label>
+					  			<input id="loginName" name="loginName" value="${loginName}" type="text"  readonly="readonly" style="width:350px;" />
 					  		</li>
 					  		<li>
-					  			<label>来源</label>
-					  			<input id="source" name="source" value="${source}" type="text" maxlength="100" style="width:300px;" />
+					  			<label>旧密码</label>
+					  			<input id="opassword" name="opassword" value="" type="password" maxlength="10" style="width:350px;" />
 					  		</li>
 					  		<li>
-					  			<label>外部链接</label>
-					  			<input id="link" name="link" value="${link}" type="text" maxlength="100" style="width:300px;" />
+					  			<label>新密码</label>
+					  			<input id="password" name="password" value="" type="password" maxlength="10" style="width:350px;" />
 					  		</li>
-					  		<li >
-					  			<label style="vertical-align: top;">内容</label>
-					  			<textarea id="content" name="content" cols="100" rows="8" style="width:800px;height:270px;visibility:hidden;">${content}</textarea>
-			        			<span id="error_content"></span>
+					  		<li>
+					  			<label>确认新密码</label>
+					  			<input id="qpassword" name="qpassword" value="" type="password" maxlength="10" style="width:350px;" />
 					  		</li>
+					  		
 					  	</ul>
 						<p class="button_box">
 							<button class="btn_confirm" type="submit">保存</button> 
-							<button class="btn_cancell" type="button" onclick="window.location.href='news.action?mtype=${mtype}'">取消</button>
 						</p>
 						
 					</form>

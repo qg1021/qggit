@@ -73,14 +73,6 @@ function handleclick(parentMenuid){
 		<img src="${ctx}/image/top1.jpg" alt="" width="960" height="150"/>
 		<div class="head_logo">
 			<a href="http://www.yangzhou-ip.com" class="logo" title="http://www.yangzhou-ip.com"></a>
-			<p class="logo_name style_titlecolor">掌上扬州信息平台</p>
-			<p class="logo_site style_titlecolor">http://www.yangzhou-ip.com</p>
-
-			<div class="head_info style_titlecolor">
-				<p>主办人：孙国平</p>
-				<p>所属单位： 江苏弘盛建设工程集团有限公司</p>
-				<p>江苏省工程勘测研究院有限责任公司</p>
-			</div>
 		</div>
 		
 	</div>
