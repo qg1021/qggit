@@ -96,7 +96,7 @@
 					</td>
 					<td>
 						<img height="9" src="${ctx}/image/admin/menu_icon.gif" width="9"/>
-						<a class="menuChild" href="business.action">域名出售</a>
+						<a class="menuChild" href="business.action">资源出售</a>
 					</td>
 				</tr>
 				<tr height="20">

@@ -88,7 +88,7 @@ function handleclick(parentMenuid){
 			   <li><a name="one_menu" id="lf2" href="${ctx}/web/localfeeling.action?mtype=2" title="扬州景点" style="outline:none;blr:expression(this.onFocus=this.blur())">扬州景点</a></li>
 			   <li><a name="one_menu" id="lf0" href="${ctx}/web/localfeeling.action?mtype=0" title="扬州特产" style="outline:none;blr:expression(this.onFocus=this.blur())">扬州特产</a></li>
 			   <li><a name="one_menu" id="it1" href="${ctx}/web/introduction.action?mtype=1" title="联系我们" style="outline:none;blr:expression(this.onFocus=this.blur())">联系我们</a></li>
-			   <li><a name="one_menu" id="business" href="${ctx}/web/business.action" title="域名出售" style="outline:none;blr:expression(this.onFocus=this.blur())">域名出售</a></li>
+			   <li><a name="one_menu" id="business" href="${ctx}/web/business.action" title="资源出售" style="outline:none;blr:expression(this.onFocus=this.blur())">资源出售</a></li>
 		  	</ul>
  		</div>
  
