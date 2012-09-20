@@ -60,7 +60,9 @@ public abstract class BaseAction<T> extends CrudActionSupport<T>
             Random ra = new Random();
             if (list.size() > 2)
             {
-                rlist.add(list.get(ra.nextInt(list.size() - 1)));
+                Links link = list.get(ra.nextInt(list.size() - 1));
+                rlist.add(link);
+                list.remove(link);
                 rlist.add(list.get(ra.nextInt(list.size() - 1)));
             }
             else
