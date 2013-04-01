@@ -6,7 +6,7 @@
 <head>  
 	<%@ include file="/common/meta.jsp" %>
 	<meta content="index" name="menu" />            
-	<title>首页  (掌上扬州-扬州)</title>
+	<title>掌上扬州-扬州信息平台</title>
 	<link href="${ctx}/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="${ctx}/css/frontreset.css" rel="stylesheet" type="text/css" />
 	<link href="${ctx}/css/site.css" rel="stylesheet" type="text/css" /> 
