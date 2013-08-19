@@ -43,10 +43,10 @@
 				<script src="http://s17.cnzz.com/stat.php?id=5168793&web_id=5168793&show=pic" language="JavaScript"></script>
 				<script type="text/javascript">
 					var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-					document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe03b00cc989c7dec29cce6af34d192e5' type='text/javascript'%3E%3C/script%3E"));
+					document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd461333eb16889f402bca911ee71c971' type='text/javascript'%3E%3C/script%3E"));
 				</script>
-				<a href="javascript:void(0);" onclick="javascript:setHomepage('http://www.sgp-yzip.cn');" style="outline:none;blr:expression(this.onFocus=this.blur())">设为首页</a> | 
-				<a href="javascript:void(0);" onclick="addFavor('http://www.sgp-yzip.cn', '掌上扬州信息平台')" style="outline:none;blr:expression(this.onFocus=this.blur())">加入收藏夹</a>
+				<a href="javascript:void(0);" onclick="javascript:setHomepage('http://www.zsyz1688.com');" style="outline:none;blr:expression(this.onFocus=this.blur())">设为首页</a> | 
+				<a href="javascript:void(0);" onclick="addFavor('http://www.zsyz1688.com', '掌上扬州信息平台')" style="outline:none;blr:expression(this.onFocus=this.blur())">加入收藏夹</a>
 			</span> 
 			主办人：孙国平  所在单位 ：江苏省工程勘测研究院有限责任公司 江苏弘盛建设工程集团有限公司 
 			</li>

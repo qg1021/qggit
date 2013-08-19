@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite
+    PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+    "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<urlrewrite>
+	<rule>
+		<name>首页url重写</name>
+		<from>/index.html</from>
+		<to type="forward">/index.action</to>
+	</rule>
+	<!--<rule>
+		<name>注册url重写</name>
+		<from>/register.html</from>
+		<to type="forward">/register.action</to>
+	</rule>
+	<rule>
+		<name>关于我们url重写</name>
+		<from>/aboutus.html</from>
+		<to type="forward">/links!detail.action?mtype=1</to>
+	</rule>
+	<rule>
+		<name>联系我们url重写</name>
+		<from>/contactus.html</from>
+		<to type="forward">/links!detail.action?mtype=2</to>
+	</rule>
+	<rule>
+		<name>广告服务url重写</name>
+		<from>/advert.html</from>
+		<to type="forward">/links!detail.action?mtype=3</to>
+	</rule>
+	<rule>
+		<name>前台商城资讯明细url重写</name>
+		<from>/news.html</from>
+		<to type="forward">/news.action</to>
+	</rule>
+	<rule>
+		<name>前台商城资讯明细url重写</name>
+		<from>/news-([0-9]+).html</from>
+		<to type="forward">/news!input.action?id=$1</to>
+	</rule>
+	<rule>
+		<name>前台广告明细url重写</name>
+		<from>/advert-([0-9]+).html</from>
+		<to type="forward">/advert!input.action?id=$1</to>
+	</rule>
+	<rule>
+		<name>前台商品查询url重写</name>
+		<from>/product.html</from>
+		<to type="forward">/product.action</to>
+	</rule>
+	<rule>
+		<name>前台商品查询url重写(品牌参数)</name>
+		<from>/product-brand-([0-9]+).html</from>
+		<to type="forward">/product.action?brandid=$1</to>
+	</rule>
+	<rule>
+		<name>前台商品查询url重写(商品分类)</name>
+		<from>/product-cat-([0-9]+)-([0-9]+)-([0-9]+).html</from>
+		<to type="forward">/product.action?onecatid=$1&amp;twocatid=$2&amp;threecatid=$3</to>
+	</rule>
+	<rule>
+		<name>前台商品明细url重写</name>
+		<from>/product-([0-9]+)-tab-([0-9]+).html</from>
+		<to type="forward">/product!input.action?id=$1&amp;tabid=$2</to>
+	</rule>
+	<rule>
+		<name>前台商品评论url重写</name>
+		<from>/product-post-([0-9]+).html</from>
+		<to type="forward">/post.action?pid=$1</to>
+	</rule>
+	<rule>
+		<name>前台商品询价url重写</name>
+		<from>/product-enquiry-([0-9]+).html</from>
+		<to type="forward">/enquiry.action?pid=$1</to>
+	</rule>
+	<rule>
+		<name>关于我们url重写</name>
+		<from>/aboutus.html</from>
+		<to type="forward">/links!detail.action?mtype=1</to>
+	</rule>
+	<rule>
+		<name>联系我们url重写</name>
+		<from>/contactus.html</from>
+		<to type="forward">/links!detail.action?mtype=2</to>
+	</rule>
+	<rule>
+		<name>广告服务url重写</name>
+		<from>/advert.html</from>
+		<to type="forward">/links!detail.action?mtype=3</to>
+	</rule>
+	<rule>
+		<name>友情链接url重写</name>
+		<from>/friendlinks.html</from>
+		<to type="forward">/links.action</to>
+	</rule>
+<outbound-rule>
+		<name>浏览文章1</name>
+		<from>/news/article!info.action\?id=(\w*)&amp;fg=(\w*)</from>
+		<to>/a-$1-$2.html</to>
+	</outbound-rule>
+	<rule>
+		<name>二个参数，参数为字符或数字,请求主配置带- </name>
+		<from>/a-(\d+)-(\d+).html</from>
+		<to type="forward">/news/article!info.action?id=$1&amp;fg=$2</to>
+	</rule>
+	<outbound-rule>
+		<name>浏览文章2</name>
+		<from>/news/article!info.action\?id=(\d+)&amp;fg=(\d+)</from>
+		<to>/a-$1-$2.html</to>
+	</outbound-rule>
+
+	-->
+</urlrewrite>
