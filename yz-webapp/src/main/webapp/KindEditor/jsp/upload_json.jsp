@@ -9,11 +9,14 @@
 <%@ page import="org.springframework.web.multipart.MultipartHttpServletRequest"%>
 <%@ page import="org.springframework.web.multipart.commons.CommonsMultipartResolver"%>
 <%@ page import="org.apache.struts2.dispatcher.multipart.MultiPartRequestWrapper"%>
+<%@page import="com.drcl.yz.contant.Global"%>
+
 <%
 	//文件保存目录路径     //D:\Tomcat6.0\webapps\zswz\attached/ 
 	String savePath = request.getSession().getServletContext().getRealPath("/")+ "upload/news/";
 	//文件保存目录URL /zswz/attached/ 
 	String saveUrl = request.getContextPath() + "/upload/news/";
+	String displayUrl=Global.siteurl+"/upload/news/";
 	//定义允许上传的文件扩展名 
 	//定义允许上传的文件扩展名 
 	HashMap<String, String> extMap = new HashMap<String, String>();
@@ -51,7 +54,8 @@
 	//创建文件夹 
 	savePath += dirName + "/";
 	//D:\Tomcat6.0\webapps\zswz\attached/image/ 
-	saveUrl += dirName + "/";///zswz/attached/image/ 
+	saveUrl += dirName + "/";///zswz/attached/image/
+	displayUrl+= dirName + "/";
 	File saveDirFile = new File(savePath);
 	if (!saveDirFile.exists()) {
 		saveDirFile.mkdirs();
@@ -60,7 +64,8 @@
 	String ymd = sdf.format(new Date());
 	savePath += ymd + "/";
 	//D:\Tomcat6.0\webapps\zswz\attached/image/20111129/ 
-	saveUrl += ymd + "/";///zswz/attached/image/20111129/ 
+	saveUrl += ymd + "/";///zswz/attached/image/20111129/
+	displayUrl+= ymd + "/";
 	File dirFile = new File(savePath);
 	if (!dirFile.exists()) {
 		dirFile.mkdirs();
@@ -118,7 +123,7 @@
 	String newImgName = df.format(new Date()) + "_"
 			+ new Random().nextInt(1000) + "." + fileExt;
 	byte[] buffer = new byte[1024]; //获取文件输出流 
-	FileOutputStream fos = new FileOutputStream(savePath + "/"
+	FileOutputStream fos = new FileOutputStream(savePath
 			+ newImgName);
 	//获取内存中当前文件输入流 
 	//InputStream in = new FileInputStream(file);
@@ -136,7 +141,8 @@
 	//发送给 KE  
 	JSONObject obj = new JSONObject();
 	obj.put("error", 0);
-	obj.put("url", saveUrl + "/" + newImgName);
+	obj.put("url", displayUrl+newImgName);
+	//System.out.println(displayUrl+newImgName);
 	///zswz/attached/image/20111129/  image 20111129195421_593.jpg 
 	out.println(obj.toJSONString());
 %>

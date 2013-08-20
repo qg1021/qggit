@@ -2,13 +2,14 @@
 <%@ page import="java.util.*,java.io.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="org.json.simple.*" %>
+<%@page import="com.drcl.yz.contant.Global"%>
 <%
 
 
 //根目录路径，可以指定绝对路径，比如 /var/www/attached/
 String rootPath = pageContext.getServletContext().getRealPath("/upload/news/") + "/";
 //根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
-String rootUrl  = request.getContextPath() + "/upload/news/";
+String rootUrl  =Global.siteurl+ "/upload/news/";
 //图片扩展名
 String[] fileTypes = new String[]{"gif", "jpg", "jpeg", "png", "bmp"};
 

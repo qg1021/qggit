@@ -144,12 +144,12 @@
 		    <s:iterator value="linksList" status="st">
 			    <s:if test="#st.last">
 			    	<a style="margin-right:0;" title="${title}" href="${link}" target="_blank">
-			    		<img alt="${title}" style="cursor: pointer;" border="0" src="${ctx}/<%=Global.picpath%>${picurl}" width="152" height="43"/>
+			    		<img alt="${title}" style="cursor: pointer;" border="0" src="<%=Global.siteurl%><%=Global.picpath%>${picurl}" width="152" height="43"/>
 			    	</a>
 			    </s:if>
 			    <s:else>
 			    	<a href="${link}" target="_blank" title="${title}">
-			    		<img alt="${title}" style="cursor: pointer;" border="0" src="${ctx}/<%=Global.picpath%>${picurl}" width="152" height="43"/>
+			    		<img alt="${title}" style="cursor: pointer;" border="0" src="<%=Global.siteurl%><%=Global.picpath%>${picurl}" width="152" height="43"/>
 			    	</a>
 			    </s:else>
 		    </s:iterator> 

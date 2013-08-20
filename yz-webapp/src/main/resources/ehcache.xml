@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache>
 
-	<diskStore path="java.io.tmpdir/jsexam/oems/service" />
+	<diskStore path="java.io.tmpdir/yz/service" />
 
 	<!-- DefaultCache setting. -->
 	<defaultCache maxElementsInMemory="10000" memoryStoreEvictionPolicy="LRU" eternal="false"

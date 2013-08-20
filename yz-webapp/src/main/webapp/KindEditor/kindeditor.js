@@ -630,7 +630,7 @@ function _formatCss(css) {
 }
 function _formatUrl(url, mode, host, pathname) {
 	mode = _undef(mode, '').toLowerCase();
-	if (_inArray(mode, ['absolute', 'relative', 'domain']) < 0) {
+	if (_inArray(mode, ['absolute', 'relative', 'domain']) <= 0) {
 		return url;
 	}
 	host = host || location.protocol + '//' + location.host;
