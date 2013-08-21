@@ -41,7 +41,7 @@
 	        		<p class="dotline_top"></p>
 	        		<span class="column_con">
 			        	<s:iterator value="intrList">
-			        		<a href="${ctx}/web/introduction.action?mtype=0">&nbsp;&nbsp;&nbsp;&nbsp;<common:cut len="300" string="${content}"></common:cut></a>
+			        		<a href="${ctx}/web/introduction.action?mtype=0">&nbsp;&nbsp;&nbsp;&nbsp;<common:cut len="700" string="${content}"></common:cut></a>
 			        	</s:iterator>
 	        		</span>
 	      		</div>
